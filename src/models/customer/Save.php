@@ -7,7 +7,6 @@ namespace app\models\customer;
 use app\components\web\crud\Model;
 use app\models\Customer;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 use Yii;
 use yii\db\ActiveRecord;
 
@@ -22,7 +21,7 @@ class Save extends Model
 
     public ?string $contractDate = null;
 
-    public ?string $contractNumber= null;
+    public ?string $contractNumber = null;
 
     public ?string $name = null;
 
@@ -50,17 +49,9 @@ class Save extends Model
         $this->phone = $entity->getPhoneFormatted();
     }
 
-    #[ArrayShape([
-        'address' => "string",
-        'contactPerson' => "string",
-        'contractDate' => "string",
-        'contractNumber' => "string",
-        'name' => "string",
-        'phone' => "string"
-    ])]
     public function attributeLabels(): array
     {
-        $labels = (new Customer())->attributeLabels();
+        $labels = new Customer()->attributeLabels();
 
         return [
             'address' => $labels['address'],
@@ -102,7 +93,7 @@ class Save extends Model
             ['name', 'required'],
             ['name', 'string', 'max' => Customer::NAME_MAX_LENGTH],
 
-            ['phone', 'filter', 'filter' => function() {
+            ['phone', 'filter', 'filter' => function () {
                 return str_replace([' ', '+7', '-', '(', ')'], '', $this->phone);
             }],
             ['phone', 'required'],

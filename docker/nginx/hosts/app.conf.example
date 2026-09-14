@@ -18,7 +18,7 @@ server {
     }
 
     location /assets {
-            alias ${APP_DIR}/src/runtime/assets;
+            alias ${APP_DIR}/var/runtime/assets;
         }
 
     location ~ \.php$ {

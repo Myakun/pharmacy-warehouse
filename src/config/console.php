@@ -8,12 +8,10 @@ use yii\helpers\ArrayHelper;
 return ArrayHelper::merge([
     'controllerMap' => [
         'migrate' => [
-              'class' => MigrateController::class,
-              'migrationPath' => [
-                  '@app/migrations',
-                  '@yii/rbac/migrations'
-              ]
-          ],
+            'class' => MigrateController::class,
+            'migrationNamespaces' => ['app\migrations'],
+            'migrationPath' => ['@yii/rbac/migrations'],
+        ],
     ],
     'controllerNamespace' => 'app\commands',
 ], include(__DIR__ . '/main.php'));

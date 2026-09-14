@@ -11,11 +11,11 @@ class Index extends AssetBundle
     public $sourcePath = '@app/assets/receipts_products/src';
 
     public $css = [
-        'css/receipts-products-index.css'
+        'css/receipts-products-index.css',
     ];
 
     public $js = [
-        'js/receipts-products-index.js'
+        'js/receipts-products-index.js',
     ];
 
     public function init()
@@ -27,6 +27,6 @@ class Index extends AssetBundle
     }
 
     public $depends = [
-        \yii\web\YiiAsset::class
+        \yii\web\YiiAsset::class,
     ];
 }

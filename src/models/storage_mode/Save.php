@@ -6,7 +6,6 @@ namespace app\models\storage_mode;
 
 use app\components\web\crud\Model;
 use app\models\StorageMode;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\db\ActiveRecord;
 
 /**
@@ -33,11 +32,10 @@ class Save extends Model
         $this->name = $entity->name;
     }
 
-    #[ArrayShape(['name' => "string"])]
     public function attributeLabels(): array
     {
         return [
-            'name' => (new StorageMode())->getAttributeLabel('name'),
+            'name' => new StorageMode()->getAttributeLabel('name'),
         ];
     }
 

@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace app\models\receipt_product;
 
-use app\models\Producer;
 use app\components\web\crud\Model;
 use app\models\Product;
-use app\models\Receipt;
 use app\models\ReceiptProduct;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
-use yii\db\ActiveRecord;
 
 /**
  * @property ReceiptProduct $entity
@@ -30,16 +26,9 @@ class Save extends Model
 
     public ?array $storageCells = null;
 
-    #[ArrayShape([
-        'expirationDate' => "string",
-        'packagesAmount' => "string",
-        'productId' => "string",
-        'productionDate' => "string",
-        'series' => "string"
-    ])]
     public function attributeLabels(): array
     {
-        $labels = (new ReceiptProduct())->attributeLabels();
+        $labels = new ReceiptProduct()->attributeLabels();
 
         return [
             'expirationDate' => $labels['expiration_date'],
@@ -83,7 +72,7 @@ class Save extends Model
             ['productId', 'integer'],
             ['productId', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Product::class
+                'targetClass' => Product::class,
             ],
 
             ['productionDate', 'required'],

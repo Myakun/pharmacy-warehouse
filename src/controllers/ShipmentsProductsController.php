@@ -7,8 +7,6 @@ namespace app\controllers;
 use app\components\web\Controller;
 use app\components\web\crud\CRUDTrait;
 use app\models\Product;
-use app\models\ProductStorageCell;
-use app\models\ReceiptProduct;
 use app\models\Shipment;
 use app\models\shipment_product\Save;
 use app\models\ShipmentProduct;
@@ -114,7 +112,7 @@ class ShipmentsProductsController extends Controller
 
         $shipmentDataProvider = new ArrayDataProvider([
             'allModels' => [$shipment],
-            'key' => 'id'
+            'key' => 'id',
         ]);
 
         return $this->index([
@@ -127,9 +125,9 @@ class ShipmentsProductsController extends Controller
                         'productStorageCell' => function ($query) {
                             $query->with(['receiptProduct' => function ($query) {
                                 $query->with('product');
-                            }
+                            },
                         ]);
-                    }])
+                        }]),
             ],
             'viewParams' => [
                 'model' => $model,

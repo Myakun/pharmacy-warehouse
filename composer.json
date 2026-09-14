@@ -1,0 +1,82 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "myakun/yii2-recaptcha-widget",
+        "version": "2.1.1",
+        "type": "yii2-extension",
+        "dist": {
+          "type": "zip",
+          "url": "https://codeload.github.com/Myakun/yii2-recaptcha-widget/zip/6d4410774976e1782dffa04fcb7f377ddca4d1cd",
+          "reference": "6d4410774976e1782dffa04fcb7f377ddca4d1cd"
+        },
+        "require": {
+          "yiisoft/yii2": "~2.0.11",
+          "yiisoft/yii2-httpclient": "*"
+        },
+        "autoload": {
+          "psr-4": {
+            "himiklab\\yii2\\recaptcha\\": "src/"
+          }
+        }
+      }
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "components/font-awesome": "6.1.0",
+    "ext-json": "*",
+    "kartik-v/yii2-bootstrap5-dropdown": "v1.0.2",
+    "kartik-v/yii2-field-range": "v1.3.5",
+    "kartik-v/yii2-grid": "v3.5.0",
+    "kartik-v/yii2-nav-x": "~1.2.5",
+    "kartik-v/yii2-widgets": "v3.4.1",
+    "kartik-v/yii2-widget-typeahead": "v1.0.4",
+    "myakun/yii2-recaptcha-widget": "*",
+    "php": ">=8.5",
+    "yiisoft/yii2": "~2.0.52",
+    "yiisoft/yii2-bootstrap5": "2.0.50",
+    "yiisoft/yii2-debug": "2.1.19",
+    "ext-mbstring": "*"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    },
+    "github-protocols": [
+      "https"
+    ]
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  },
+  "name": "myakun/pharmacy-warehouse",
+  "description": "Pharmacy warehouse management: products, storage cells, receipts and shipments",
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.95",
+    "phpstan/phpstan": "^2.2",
+    "phpunit/phpunit": "^13.3",
+    "yii2-extensions/phpstan": "^0.4.1"
+  },
+  "scripts": {
+    "cs": "php-cs-fixer fix --dry-run --diff",
+    "cs:fix": "php-cs-fixer fix",
+    "phpstan": "phpstan analyse --memory-limit=1G",
+    "phpunit": "phpunit"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "app\\tests\\": "tests/"
+    }
+  }
+}

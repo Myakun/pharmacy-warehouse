@@ -8,7 +8,6 @@ use app\components\web\crud\Model;
 use app\models\Customer;
 use app\models\Shipment;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 use Yii;
 use yii\db\ActiveRecord;
 
@@ -43,10 +42,9 @@ class Save extends Model
     }
 
 
-    #[ArrayShape(['customerId' => "string", 'invoiceDate' => "string", 'invoiceNumber' => "string"])]
     public function attributeLabels(): array
     {
-        $labels = (new Shipment())->attributeLabels();
+        $labels = new Shipment()->attributeLabels();
 
         return [
             'customerId' => $labels['customer_id'],
@@ -82,7 +80,7 @@ class Save extends Model
             ['customerId', 'integer'],
             ['customerId', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Customer::class
+                'targetClass' => Customer::class,
             ],
 
             ['invoiceDate', 'required'],

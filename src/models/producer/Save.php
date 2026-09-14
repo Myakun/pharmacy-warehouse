@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace app\models\producer;
 
-use app\models\Producer;
 use app\components\web\crud\Model;
-use JetBrains\PhpStorm\ArrayShape;
+use app\models\Producer;
 use yii\db\ActiveRecord;
 
 /**
@@ -33,11 +32,10 @@ class Save extends Model
         $this->name = $entity->name;
     }
 
-    #[ArrayShape(['name' => "string"])]
     public function attributeLabels(): array
     {
         return [
-            'name' => (new Producer())->getAttributeLabel('name'),
+            'name' => new Producer()->getAttributeLabel('name'),
         ];
     }
 

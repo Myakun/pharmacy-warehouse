@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace app\migrations;
+
 use app\models\Customer;
 use app\models\Producer;
 use app\models\Product;
@@ -12,12 +14,13 @@ use app\models\StorageCell;
 use app\models\StorageMode;
 use app\models\Supplier;
 use app\models\User;
+use Yii;
 use yii\db\Migration;
 
 class m220501_090000_init_rbac extends Migration
 {
-	public function safeUp(): bool
-	{
+    public function safeUp(): bool
+    {
         $authManager = Yii::$app->getAuthManager();
 
         // Customers
@@ -159,10 +162,10 @@ class m220501_090000_init_rbac extends Migration
         $authManager->addChild($generalDirector, $associateDirector);
 
         return true;
-	}
+    }
 
-	public function safeDown(): bool
-	{
+    public function safeDown(): bool
+    {
         return true;
-	}
+    }
 }

@@ -7,7 +7,6 @@ namespace app\models\shipment;
 use app\models\Customer;
 use app\models\Shipment;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -24,10 +23,9 @@ class Index extends Model
     public ?string $invoiceNumber = null;
 
 
-    #[ArrayShape(['customerId' => "string", 'invoiceDateFrom' => "string", 'invoiceNumber' => "string"])]
     public function attributeLabels(): array
     {
-        $labels = (new Shipment())->attributeLabels();
+        $labels = new Shipment()->attributeLabels();
 
         return [
             'customerId' => $labels['customer_id'],

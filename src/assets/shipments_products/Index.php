@@ -11,7 +11,7 @@ class Index extends AssetBundle
     public $sourcePath = '@app/assets/shipments_products/src';
 
     public $js = [
-        'js/shipments-products-index.js'
+        'js/shipments-products-index.js',
     ];
 
     public function init()
@@ -22,6 +22,6 @@ class Index extends AssetBundle
     }
 
     public $depends = [
-        \yii\web\YiiAsset::class
+        \yii\web\YiiAsset::class,
     ];
 }

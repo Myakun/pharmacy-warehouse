@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace app\widgets\ProductsStorageCells;
 
 use app\models\Product;
@@ -25,7 +27,7 @@ class ProductsStorageCells extends Widget
         }
 
         $filterModel = new Index();
-        $filterModel->productId = $this->productId;
+        $filterModel->productId = (string) $this->productId;
 
         $allModels = [];
         foreach ($filterModel->getQuery()->all() as $productStorageCell) {

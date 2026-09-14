@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use JetBrains\PhpStorm\ArrayShape;
 use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
@@ -42,7 +41,6 @@ class User extends ActiveRecord implements IdentityInterface
 
     public const UNIQUE_ROLES = [self::ROLE_ASSOCIATE_DIRECTOR, self::ROLE_GENERAL_DIRECTOR, self::ROLE_WAREHOUSE_MANAGER];
 
-    #[ArrayShape(['name' => "string"])]
     public function attributeLabels(): array
     {
         return [
@@ -63,7 +61,6 @@ class User extends ActiveRecord implements IdentityInterface
         return true;
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
     public function behaviors(): array
     {
         return [
@@ -74,7 +71,7 @@ class User extends ActiveRecord implements IdentityInterface
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -115,9 +112,9 @@ class User extends ActiveRecord implements IdentityInterface
             ['name', 'string', 'max' => self::NAME_MAX_LENGTH],
 
             ['password', 'required',
-                'when' => function(self $user) {
+                'when' => function (self $user) {
                     return $user->getIsNewRecord();
-                }
+                },
             ],
         ];
     }

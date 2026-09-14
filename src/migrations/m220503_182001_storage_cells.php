@@ -2,15 +2,17 @@
 
 declare(strict_types=1);
 
+namespace app\migrations;
+
 use app\models\StorageCell;
 use yii\db\Migration;
 
 class m220503_182001_storage_cells extends Migration
 {
-	public function safeUp(): bool
-	{
-		$this->createTable(StorageCell::tableName(), [
-			'id' => $this->primaryKey(),
+    public function safeUp(): bool
+    {
+        $this->createTable(StorageCell::tableName(), [
+            'id' => $this->primaryKey(),
             'rack_number' => $this->integer()->notNull(),
             'row_number' => $this->integer()->notNull(),
             'shelf_number' => $this->string(1)->notNull(),
@@ -20,16 +22,16 @@ class m220503_182001_storage_cells extends Migration
             'created_at' => $this->dateTime()->notNull(),
             'created_by' => $this->integer()->notNull(),
             'FOREIGN KEY (created_by) REFERENCES users(id)',
-            'FOREIGN KEY (storage_mode_id) REFERENCES storage_modes(id)'
-		]);
+            'FOREIGN KEY (storage_mode_id) REFERENCES storage_modes(id)',
+        ]);
 
         return true;
-	}
+    }
 
-	public function safeDown(): bool
-	{
-		$this->dropTable(StorageCell::tableName());
+    public function safeDown(): bool
+    {
+        $this->dropTable(StorageCell::tableName());
 
         return true;
-	}
+    }
 }

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use DateTimeImmutable;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -31,7 +29,6 @@ class Receipt extends ActiveRecord
 
     public const PERMISSION_MANAGE = 'manageReceipts';
 
-    #[ArrayShape(['invoice_date' => "string", 'invoice_number' => "string", 'supplier_id' => "string"])]
     public function attributeLabels(): array
     {
         return [
@@ -41,7 +38,6 @@ class Receipt extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
     public function behaviors(): array
     {
         return [
@@ -52,7 +48,7 @@ class Receipt extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -67,7 +63,7 @@ class Receipt extends ActiveRecord
     {
         return $this->hasMany(ReceiptProduct::class, ['receipt_id' => 'id']);
     }
-    
+
     public function getSupplier(): ActiveQuery
     {
         return $this->hasOne(Supplier::class, ['id' => 'supplier_id']);
@@ -86,7 +82,7 @@ class Receipt extends ActiveRecord
             ['supplier_id', 'integer'],
             ['supplier_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Supplier::class
+                'targetClass' => Supplier::class,
             ],
         ];
     }

@@ -8,7 +8,6 @@ use app\components\web\crud\Model;
 use app\models\Receipt;
 use app\models\Supplier;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 use Yii;
 use yii\db\ActiveRecord;
 
@@ -43,10 +42,9 @@ class Save extends Model
     }
 
 
-    #[ArrayShape(['invoiceDate' => "string", 'invoiceNumber' => "string", 'supplierId' => "string"])]
     public function attributeLabels(): array
     {
-        $labels = (new Receipt())->attributeLabels();
+        $labels = new Receipt()->attributeLabels();
 
         return [
             'invoiceDate' => $labels['invoice_date'],
@@ -88,7 +86,7 @@ class Save extends Model
             ['supplierId', 'integer'],
             ['supplierId', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Supplier::class
+                'targetClass' => Supplier::class,
             ],
         ];
     }

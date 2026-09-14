@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use DateTimeImmutable;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -40,7 +38,6 @@ class ShipmentProduct extends ActiveRecord
         $this->productStorageCell->ship((int) $this->packages_amount);
     }
 
-    #[ArrayShape(['packages_amount' => "string"])]
     public function attributeLabels(): array
     {
         return [
@@ -48,7 +45,6 @@ class ShipmentProduct extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
     public function behaviors(): array
     {
         return [
@@ -59,7 +55,7 @@ class ShipmentProduct extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -89,14 +85,14 @@ class ShipmentProduct extends ActiveRecord
             ['product_storage_cell_id', 'integer'],
             ['product_storage_cell_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => ProductStorageCell::class
+                'targetClass' => ProductStorageCell::class,
             ],
 
             ['shipment_id', 'required'],
             ['shipment_id', 'integer'],
             ['shipment_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Shipment::class
+                'targetClass' => Shipment::class,
             ],
         ];
     }

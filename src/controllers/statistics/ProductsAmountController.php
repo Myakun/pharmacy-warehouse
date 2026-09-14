@@ -5,11 +5,8 @@ declare(strict_types=1);
 namespace app\controllers\statistics;
 
 use app\components\web\Controller;
-use app\models\Receipt;
 use app\models\Shipment;
 use app\models\statistics\ProductsAmount;
-use app\models\statistics\ReceiptsProductsFromSuppliers;
-use app\models\statistics\ShipmentsProductsToCustomers;
 use Yii;
 use yii\data\ArrayDataProvider;
 use yii\data\Sort;
@@ -33,7 +30,8 @@ class ProductsAmountController extends Controller
 
                 $month = date('m Y', strtotime($shipment->invoice_date));
 
-                $hash = sprintf('%s-%s',
+                $hash = sprintf(
+                    '%s-%s',
                     $productStorageCell->receiptProduct->product_id,
                     $month
                 );

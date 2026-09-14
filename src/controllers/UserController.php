@@ -6,7 +6,6 @@ namespace app\controllers;
 
 use app\models\User;
 use app\models\user\Login;
-use JetBrains\PhpStorm\ArrayShape;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -14,7 +13,6 @@ use yii\web\Response;
 
 class UserController extends Controller
 {
-    #[ArrayShape(['access' => "array"])]
     public function behaviors(): array
     {
         return [

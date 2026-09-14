@@ -6,9 +6,8 @@ namespace app\models\user;
 
 use app\models\User;
 use himiklab\yii2\recaptcha\ReCaptchaValidator3;
-use JetBrains\PhpStorm\ArrayShape;
-use yii\base\Model;
 use Yii;
+use yii\base\Model;
 
 class Login extends Model
 {
@@ -18,7 +17,6 @@ class Login extends Model
 
     public ?string $reCaptcha = null;
 
-    #[ArrayShape(['email' => "string", 'password' => "string"])]
     public function attributeLabels(): array
     {
         return [
@@ -45,12 +43,12 @@ class Login extends Model
     public function rules(): array
     {
         return [
-            ['email', 'filter', 'filter'=>'trim'],
-            ['email', 'filter', 'filter'=>'strtolower'],
+            ['email', 'filter', 'filter' => 'trim'],
+            ['email', 'filter', 'filter' => 'strtolower'],
             ['email', 'email'],
             ['email', 'required'],
 
-            ['password', 'filter', 'filter'=>'trim'],
+            ['password', 'filter', 'filter' => 'trim'],
             ['password', 'required'],
             ['password', 'loginRule'],
 

@@ -7,7 +7,6 @@ namespace app\models\product;
 use app\models\Producer;
 use app\models\Product;
 use app\models\StorageMode;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 use yii\helpers\ArrayHelper;
@@ -22,14 +21,9 @@ class Index extends Model
 
     public ?int $storageModeId = null;
 
-    #[ArrayShape([
-        'name' => "string",
-        'producer' => "string",
-        'storageModeId' => "string"
-    ])]
     public function attributeLabels(): array
     {
-        $labels = (new Product())->attributeLabels();
+        $labels = new Product()->attributeLabels();
 
         return [
             'name' => $labels['name'],

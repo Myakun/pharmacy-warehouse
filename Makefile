@@ -1,3 +1,9 @@
+composer-require:
+	docker exec pharmacy-warehouse-php /usr/local/bin/composer require -d /var/www/app $(PKG)
+
+composer-require-dev:
+	docker exec pharmacy-warehouse-php /usr/local/bin/composer require --dev -d /var/www/app $(PKG)
+
 composer-update:
 	docker exec pharmacy-warehouse-php /usr/local/bin/composer update -d /var/www/app --prefer-dist
 	docker exec pharmacy-warehouse-php /usr/local/bin/composer dump-autoload -d /var/www/app -o

@@ -9,9 +9,11 @@ $params = include __DIR__ . '/params.php';
 
 $config = [
     'aliases' => [
-        '@bower' => __DIR__ . '/../vendor/bower-asset'
+        '@bower' => dirname(__DIR__, 2) . '/vendor/bower-asset'
     ],
     'basePath' => dirname(__DIR__),
+    'runtimePath' => dirname(__DIR__, 2) . '/var/runtime',
+    'vendorPath' => dirname(__DIR__, 2) . '/vendor',
     'bootstrap' => ['log'],
     'components' => [
         'authManager' => [

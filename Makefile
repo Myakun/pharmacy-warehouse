@@ -1,6 +1,6 @@
 composer-update:
-	docker exec pharmacy-warehouse-php /usr/local/bin/composer update -d /var/www/app/src --prefer-dist
-	docker exec pharmacy-warehouse-php /usr/local/bin/composer dump-autoload -d /var/www/app/src -o
+	docker exec pharmacy-warehouse-php /usr/local/bin/composer update -d /var/www/app --prefer-dist
+	docker exec pharmacy-warehouse-php /usr/local/bin/composer dump-autoload -d /var/www/app -o
 
 docker-rebuild:
 	docker compose stop

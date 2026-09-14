@@ -1,4 +1,4 @@
-FROM php:8.1-fpm
+FROM php:8.5-fpm
 
 RUN set -eux \
 	&& DEBIAN_FRONTEND=noninteractive apt-get update -qq \

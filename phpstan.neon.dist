@@ -13,6 +13,7 @@ parameters:
     level: 6
     paths:
         - src
+        - tests
     tmpDir: var/cache/phpstan
     yii2:
         config_path: src/config/phpstan.php

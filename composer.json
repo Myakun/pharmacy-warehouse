@@ -65,11 +65,18 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.95",
     "phpstan/phpstan": "^2.2",
+    "phpunit/phpunit": "^13.3",
     "yii2-extensions/phpstan": "^0.4.1"
   },
   "scripts": {
     "cs": "php-cs-fixer fix --dry-run --diff",
     "cs:fix": "php-cs-fixer fix",
-    "phpstan": "phpstan analyse --memory-limit=1G"
+    "phpstan": "phpstan analyse --memory-limit=1G",
+    "phpunit": "phpunit"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "app\\tests\\": "tests/"
+    }
   }
 }

@@ -7,7 +7,7 @@ use PhpCsFixer\Finder;
 use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 $finder = Finder::create()
-    ->in([__DIR__ . '/src'])
+    ->in([__DIR__ . '/src', __DIR__ . '/tests'])
     ->notPath(['views/'])
     ->name('*.php');
 

@@ -22,6 +22,12 @@ phpstan-baseline:
 phpstan-clear-cache:
 	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpstan clear-result-cache
 
+phpunit:
+	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpunit
+
+phpunit-coverage:
+	docker exec -w /var/www/app -e XDEBUG_MODE=coverage pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpunit --coverage-text --coverage-html var/log/coverage
+
 reinstall-demo-data:
 	docker exec pharmacy-warehouse-php /usr/local/bin/php /var/www/app/src/yii.php migrate/down all --interactive=0
 	docker exec pharmacy-warehouse-php /usr/local/bin/php /var/www/app/src/yii.php migrate/up --interactive=0

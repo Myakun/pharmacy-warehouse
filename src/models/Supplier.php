@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -40,14 +39,6 @@ class Supplier extends ActiveRecord
 
     public const PHONE_LENGTH = 10;
 
-    #[ArrayShape([
-        'address' => 'string',
-        'contact_person' => 'string',
-        'contract_date' => 'string',
-        'contract_number' => 'string',
-        'name' => 'string',
-        'phone' => 'string',
-    ])]
     public function attributeLabels(): array
     {
         return [
@@ -60,7 +51,6 @@ class Supplier extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [

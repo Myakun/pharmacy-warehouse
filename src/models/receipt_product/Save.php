@@ -8,7 +8,6 @@ use app\components\web\crud\Model;
 use app\models\Product;
 use app\models\ReceiptProduct;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 
 /**
  * @property ReceiptProduct $entity
@@ -27,13 +26,6 @@ class Save extends Model
 
     public ?array $storageCells = null;
 
-    #[ArrayShape([
-        'expirationDate' => 'string',
-        'packagesAmount' => 'string',
-        'productId' => 'string',
-        'productionDate' => 'string',
-        'series' => 'string',
-    ])]
     public function attributeLabels(): array
     {
         $labels = new ReceiptProduct()->attributeLabels();

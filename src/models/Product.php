@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -32,12 +31,6 @@ class Product extends ActiveRecord
 
     public const PERMISSION_MANAGE = 'manageProducts';
 
-    #[ArrayShape([
-        'name' => 'string',
-        'package_volume' => 'string',
-        'producer_id' => 'string',
-        'storage_mode_id' => 'string',
-    ])]
     public function attributeLabels(): array
     {
         return [
@@ -48,7 +41,6 @@ class Product extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [

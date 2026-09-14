@@ -7,7 +7,6 @@ namespace app\models\receipt;
 use app\models\Receipt;
 use app\models\Supplier;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -23,7 +22,6 @@ class Index extends Model
 
     public ?string $supplierId = null;
 
-    #[ArrayShape(['invoiceDateFrom' => 'string', 'invoiceNumber' => 'string', 'supplierId' => 'string'])]
     public function attributeLabels(): array
     {
         $labels = new Receipt()->attributeLabels();

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -39,7 +38,6 @@ class ShipmentProduct extends ActiveRecord
         $this->productStorageCell->ship((int) $this->packages_amount);
     }
 
-    #[ArrayShape(['packages_amount' => 'string'])]
     public function attributeLabels(): array
     {
         return [
@@ -47,7 +45,6 @@ class ShipmentProduct extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [

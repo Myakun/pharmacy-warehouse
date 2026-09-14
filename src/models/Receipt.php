@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -30,7 +29,6 @@ class Receipt extends ActiveRecord
 
     public const PERMISSION_MANAGE = 'manageReceipts';
 
-    #[ArrayShape(['invoice_date' => 'string', 'invoice_number' => 'string', 'supplier_id' => 'string'])]
     public function attributeLabels(): array
     {
         return [
@@ -40,7 +38,6 @@ class Receipt extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [

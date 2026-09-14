@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace app\models\shipment_product;
 
 use app\models\Product;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 
 class Save extends Model
@@ -14,9 +13,6 @@ class Save extends Model
 
     public ?string $productId = null;
 
-    #[ArrayShape([
-        'productId' => 'string',
-    ])]
     public function attributeLabels(): array
     {
         return [

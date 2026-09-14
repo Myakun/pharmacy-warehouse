@@ -7,7 +7,6 @@ namespace app\models\storage_cell;
 use app\components\web\crud\Model;
 use app\models\StorageCell;
 use app\models\StorageMode;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 
@@ -47,13 +46,6 @@ class Save extends Model
         $this->volume = (string) $entity->volume;
     }
 
-    #[ArrayShape([
-        'rackNumber' => 'string',
-        'rowNumber' => 'string',
-        'shelfNumber' => 'string',
-        'storageModeId' => 'string',
-        'volume' => 'string',
-    ])]
     public function attributeLabels(): array
     {
         $labels = new StorageCell()->attributeLabels();

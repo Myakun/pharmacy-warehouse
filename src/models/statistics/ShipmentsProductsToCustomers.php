@@ -8,7 +8,6 @@ use app\models\Customer;
 use app\models\Product;
 use app\models\Shipment;
 use DateTime;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -26,13 +25,6 @@ class ShipmentsProductsToCustomers extends Model
 
     public ?string $series = null;
 
-    #[ArrayShape([
-        'customerId' => 'string',
-        'invoiceDateFrom' => 'string',
-        'invoiceNumber' => 'string',
-        'productId' => 'string',
-        'series' => 'string',
-    ])]
     public function attributeLabels(): array
     {
         $labels = new Shipment()->attributeLabels();

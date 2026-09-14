@@ -6,7 +6,6 @@ namespace app\models\product_storage_cell;
 
 use app\models\Product;
 use app\models\ProductStorageCell;
-use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -18,7 +17,6 @@ class Index extends Model
 
     public ?string $series = null;
 
-    #[ArrayShape(['productId' => 'string', 'series' => 'string'])]
     public function attributeLabels(): array
     {
         return [

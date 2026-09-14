@@ -7,6 +7,15 @@ docker-rebuild:
 	docker compose build
 	docker compose up -d --remove-orphans
 
+phpstan:
+	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpstan analyse --memory-limit=1G
+
+phpstan-baseline:
+	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpstan analyse --memory-limit=1G --generate-baseline
+
+phpstan-clear-cache:
+	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpstan clear-result-cache
+
 reinstall-demo-data:
 	docker exec pharmacy-warehouse-php /usr/local/bin/php /var/www/app/src/yii.php migrate/down all --interactive=0
 	docker exec pharmacy-warehouse-php /usr/local/bin/php /var/www/app/src/yii.php migrate/up --interactive=0

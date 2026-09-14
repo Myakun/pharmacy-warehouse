@@ -9,3 +9,5 @@ composer.lock
 node_modules
 docker-compose.override.yml
 /var/
+/phpstan.neon
+/phpstan-baseline.neon

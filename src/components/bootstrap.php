@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-defined('APP_ENV') || define('APP_ENV', getenv('APP_ENV'));
+defined('APP_ENV') || define('APP_ENV', getenv('APP_ENV') ?: 'prod');
 defined('YII_DEBUG') || define('YII_DEBUG', APP_ENV == 'dev');
 defined('YII_ENV') || define('YII_ENV', APP_ENV);
 

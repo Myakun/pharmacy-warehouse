@@ -61,5 +61,12 @@
     }
   },
   "name": "myakun/apotheke",
-  "description": ""
+  "description": "",
+  "require-dev": {
+    "phpstan/phpstan": "^2.2",
+    "yii2-extensions/phpstan": "^0.4.1"
+  },
+  "scripts": {
+    "phpstan": "phpstan analyse --memory-limit=1G"
+  }
 }

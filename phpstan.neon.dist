@@ -1,0 +1,18 @@
+includes:
+    - phpstan-baseline.neon
+    - vendor/yii2-extensions/phpstan/extension.neon
+
+parameters:
+    bootstrapFiles:
+        - src/components/bootstrap.php
+    dynamicConstantNames:
+        - APP_ENV
+    excludePaths:
+        - src/views
+        - src/widgets/*/views/*
+    level: 6
+    paths:
+        - src
+    tmpDir: var/cache/phpstan
+    yii2:
+        config_path: src/config/phpstan.php

@@ -58,11 +58,11 @@ class StorageCellsController extends Controller
                                 new Expression('storage_mode_id ASC, row_number ASC, rack_number ASC, shelf_number ASC'),
                             ],
                             'desc' => [
-                                new Expression("storage_mode_id DESC, row_number DESC, rack_number DESC, shelf_number DESC"),
+                                new Expression('storage_mode_id DESC, row_number DESC, rack_number DESC, shelf_number DESC'),
                             ],
                         ],
                         'volume',
-                        'volume_left'
+                        'volume_left',
                     ],
                 ]),
                 'query' => $filterModel->getQuery(),

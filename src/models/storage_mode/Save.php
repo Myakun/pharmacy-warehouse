@@ -33,11 +33,11 @@ class Save extends Model
         $this->name = $entity->name;
     }
 
-    #[ArrayShape(['name' => "string"])]
+    #[ArrayShape(['name' => 'string'])]
     public function attributeLabels(): array
     {
         return [
-            'name' => (new StorageMode())->getAttributeLabel('name'),
+            'name' => new StorageMode()->getAttributeLabel('name'),
         ];
     }
 

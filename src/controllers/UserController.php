@@ -14,7 +14,7 @@ use yii\web\Response;
 
 class UserController extends Controller
 {
-    #[ArrayShape(['access' => "array"])]
+    #[ArrayShape(['access' => 'array'])]
     public function behaviors(): array
     {
         return [

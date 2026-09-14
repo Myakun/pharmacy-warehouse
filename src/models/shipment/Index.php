@@ -24,10 +24,10 @@ class Index extends Model
     public ?string $invoiceNumber = null;
 
 
-    #[ArrayShape(['customerId' => "string", 'invoiceDateFrom' => "string", 'invoiceNumber' => "string"])]
+    #[ArrayShape(['customerId' => 'string', 'invoiceDateFrom' => 'string', 'invoiceNumber' => 'string'])]
     public function attributeLabels(): array
     {
-        $labels = (new Shipment())->attributeLabels();
+        $labels = new Shipment()->attributeLabels();
 
         return [
             'customerId' => $labels['customer_id'],

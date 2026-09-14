@@ -30,7 +30,7 @@ class Index extends Model
                     ['like', 'address', $this->name],
                     ['like', 'contact_person', $this->name],
                     ['like', 'name', $this->name],
-                    ['like', 'phone', $this->name]
+                    ['like', 'phone', $this->name],
                 ]
             );
         }

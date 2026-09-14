@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace app\models;
 
 use JetBrains\PhpStorm\ArrayShape;
-use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -26,7 +25,7 @@ class Producer extends ActiveRecord
 
     public const PERMISSION_MANAGE = 'manageProducers';
 
-    #[ArrayShape(['name' => "string"])]
+    #[ArrayShape(['name' => 'string'])]
     public function attributeLabels(): array
     {
         return [
@@ -34,7 +33,7 @@ class Producer extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
+    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [
@@ -45,7 +44,7 @@ class Producer extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }

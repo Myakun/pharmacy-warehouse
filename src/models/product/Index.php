@@ -23,13 +23,13 @@ class Index extends Model
     public ?int $storageModeId = null;
 
     #[ArrayShape([
-        'name' => "string",
-        'producer' => "string",
-        'storageModeId' => "string"
+        'name' => 'string',
+        'producer' => 'string',
+        'storageModeId' => 'string',
     ])]
     public function attributeLabels(): array
     {
-        $labels = (new Product())->attributeLabels();
+        $labels = new Product()->attributeLabels();
 
         return [
             'name' => $labels['name'],

@@ -41,12 +41,12 @@ class Supplier extends ActiveRecord
     public const PHONE_LENGTH = 10;
 
     #[ArrayShape([
-        'address' => "string",
-        'contact_person' => "string",
-        'contract_date' => "string",
-        'contract_number' => "string",
-        'name' => "string",
-        'phone' => "string"
+        'address' => 'string',
+        'contact_person' => 'string',
+        'contract_date' => 'string',
+        'contract_number' => 'string',
+        'name' => 'string',
+        'phone' => 'string',
     ])]
     public function attributeLabels(): array
     {
@@ -60,7 +60,7 @@ class Supplier extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
+    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [
@@ -71,7 +71,7 @@ class Supplier extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }

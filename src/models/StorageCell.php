@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace app\models;
 
 use JetBrains\PhpStorm\ArrayShape;
-use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -41,12 +40,12 @@ class StorageCell extends ActiveRecord
     public const VOLUME_MIN = 1;
 
     #[ArrayShape([
-        'shelf_number' => "string",
-        'rack_number' => "string",
-        'row_number' => "string",
-        'storage_mode_id' => "string",
-        'volume' => "string",
-        'volume_left' => "string"
+        'shelf_number' => 'string',
+        'rack_number' => 'string',
+        'row_number' => 'string',
+        'storage_mode_id' => 'string',
+        'volume' => 'string',
+        'volume_left' => 'string',
     ])]
     public function attributeLabels(): array
     {
@@ -73,7 +72,7 @@ class StorageCell extends ActiveRecord
         return true;
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
+    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [
@@ -84,7 +83,7 @@ class StorageCell extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -125,7 +124,7 @@ class StorageCell extends ActiveRecord
         return $this->hasMany(ProductStorageCell::class, ['storage_cell_id' => 'id']);
     }
 
-    #[ArrayShape(['А' => "string", 'Б' => "string", 'В' => "string", 'Г' => "string"])]
+    #[ArrayShape(['А' => 'string', 'Б' => 'string', 'В' => 'string', 'Г' => 'string'])]
     public static function getShelfNumberOptions(): array
     {
         return [
@@ -157,7 +156,7 @@ class StorageCell extends ActiveRecord
             ['storage_mode_id', 'integer'],
             ['storage_mode_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => StorageMode::class
+                'targetClass' => StorageMode::class,
             ],
 
             ['volume', 'required'],

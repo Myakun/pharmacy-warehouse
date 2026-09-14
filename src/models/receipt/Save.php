@@ -43,10 +43,10 @@ class Save extends Model
     }
 
 
-    #[ArrayShape(['invoiceDate' => "string", 'invoiceNumber' => "string", 'supplierId' => "string"])]
+    #[ArrayShape(['invoiceDate' => 'string', 'invoiceNumber' => 'string', 'supplierId' => 'string'])]
     public function attributeLabels(): array
     {
-        $labels = (new Receipt())->attributeLabels();
+        $labels = new Receipt()->attributeLabels();
 
         return [
             'invoiceDate' => $labels['invoice_date'],
@@ -88,7 +88,7 @@ class Save extends Model
             ['supplierId', 'integer'],
             ['supplierId', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Supplier::class
+                'targetClass' => Supplier::class,
             ],
         ];
     }

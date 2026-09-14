@@ -7,10 +7,10 @@ use yii\db\Migration;
 
 class m220506_161643_receipts_products extends Migration
 {
-	public function safeUp(): bool
-	{
-		$this->createTable(ReceiptProduct::tableName(), [
-			'id' => $this->primaryKey(),
+    public function safeUp(): bool
+    {
+        $this->createTable(ReceiptProduct::tableName(), [
+            'id' => $this->primaryKey(),
             'expiration_date' => $this->date()->notNull(),
             'packages_amount' => $this->integer()->notNull(),
             'product_id' => $this->integer()->notNull(),
@@ -21,16 +21,16 @@ class m220506_161643_receipts_products extends Migration
             'created_by' => $this->integer()->notNull(),
             'FOREIGN KEY (created_by) REFERENCES users(id)',
             'FOREIGN KEY (product_id) REFERENCES products(id)',
-            'FOREIGN KEY (receipt_id) REFERENCES receipts(id)'
-		]);
+            'FOREIGN KEY (receipt_id) REFERENCES receipts(id)',
+        ]);
 
         return true;
-	}
+    }
 
-	public function safeDown(): bool
-	{
-		$this->dropTable(ReceiptProduct::tableName());
+    public function safeDown(): bool
+    {
+        $this->dropTable(ReceiptProduct::tableName());
 
         return true;
-	}
+    }
 }

@@ -4,16 +4,11 @@ declare(strict_types=1);
 
 namespace app\models\product_storage_cell;
 
-use app\models\Producer;
 use app\models\Product;
 use app\models\ProductStorageCell;
-use app\models\Series;
-use app\models\StorageMode;
-use DateTime;
 use JetBrains\PhpStorm\ArrayShape;
 use yii\base\Model;
 use yii\db\ActiveQuery;
-use yii\helpers\ArrayHelper;
 
 class Index extends Model
 {
@@ -23,7 +18,7 @@ class Index extends Model
 
     public ?string $series = null;
 
-    #[ArrayShape(['productId' => "string", 'series' => "string"])]
+    #[ArrayShape(['productId' => 'string', 'series' => 'string'])]
     public function attributeLabels(): array
     {
         return [
@@ -53,10 +48,10 @@ class Index extends Model
         $query = ProductStorageCell::find()
            ->andWhere("$productStorageCellsTableName.amount > 0")
            ->with([
-               'receiptProduct' => function(ActiveQuery $query) {
-                    $query->with(['product']);
-                },
-               'storageCell' => function(ActiveQuery $query) {
+               'receiptProduct' => function (ActiveQuery $query) {
+                   $query->with(['product']);
+               },
+               'storageCell' => function (ActiveQuery $query) {
                    $query->with(['storageMode']);
                },
            ]);
@@ -64,7 +59,7 @@ class Index extends Model
         if (null != $this->productId) {
             $this->filterEnabled = true;
             $query->innerJoinWith([
-                'receiptProduct' => function(ActiveQuery $query) {
+                'receiptProduct' => function (ActiveQuery $query) {
                     $query->andWhere(['product_id' => $this->productId]);
                 },
             ]);
@@ -73,7 +68,7 @@ class Index extends Model
         if (null != $this->series) {
             $this->filterEnabled = true;
             $query->innerJoinWith([
-                'receiptProduct' => function(ActiveQuery $query) {
+                'receiptProduct' => function (ActiveQuery $query) {
                     $query->andWhere(['series' => $this->series]);
                 },
             ]);

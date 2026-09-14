@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace app\models\user;
 
 use app\models\User;
-use app\components\web\crud\Model;
 use Yii;
 use yii\db\ActiveRecord;
-use yii\helpers\ArrayHelper;
 
 /**
  * @property User $entity

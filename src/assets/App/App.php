@@ -11,7 +11,7 @@ class App extends AssetBundle
     public $sourcePath = '@app/assets/App/src';
 
     public $css = [
-        'css/app.css'
+        'css/app.css',
     ];
 
     public function init()

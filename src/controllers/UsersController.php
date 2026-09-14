@@ -67,11 +67,11 @@ class UsersController extends Controller
             'rules' => [
                 [
                     'allow' => true,
-                    'roles' => [User::ROLE_ASSOCIATE_DIRECTOR, User::ROLE_GENERAL_DIRECTOR]
-                ]
+                    'roles' => [User::ROLE_ASSOCIATE_DIRECTOR, User::ROLE_GENERAL_DIRECTOR],
+                ],
             ],
         ];
 
         return $behaviors;
-     }
+    }
 }

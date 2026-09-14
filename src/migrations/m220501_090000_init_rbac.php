@@ -16,8 +16,8 @@ use yii\db\Migration;
 
 class m220501_090000_init_rbac extends Migration
 {
-	public function safeUp(): bool
-	{
+    public function safeUp(): bool
+    {
         $authManager = Yii::$app->getAuthManager();
 
         // Customers
@@ -159,10 +159,10 @@ class m220501_090000_init_rbac extends Migration
         $authManager->addChild($generalDirector, $associateDirector);
 
         return true;
-	}
+    }
 
-	public function safeDown(): bool
-	{
+    public function safeDown(): bool
+    {
         return true;
-	}
+    }
 }

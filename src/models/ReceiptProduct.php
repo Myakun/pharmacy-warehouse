@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use DateTimeImmutable;
 use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
@@ -45,11 +44,11 @@ class ReceiptProduct extends ActiveRecord
     }
 
     #[ArrayShape([
-        'expiration_date' => "string",
-        'packages_amount' => "string",
-        'product_id' => "string",
-        'production_date' => "string",
-        'series' => "string"
+        'expiration_date' => 'string',
+        'packages_amount' => 'string',
+        'product_id' => 'string',
+        'production_date' => 'string',
+        'series' => 'string',
     ])]
     public function attributeLabels(): array
     {
@@ -62,7 +61,7 @@ class ReceiptProduct extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
+    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [
@@ -73,7 +72,7 @@ class ReceiptProduct extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -106,7 +105,7 @@ class ReceiptProduct extends ActiveRecord
             ['product_id', 'integer'],
             ['product_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Product::class
+                'targetClass' => Product::class,
             ],
 
             ['production_date', 'required'],
@@ -116,7 +115,7 @@ class ReceiptProduct extends ActiveRecord
             ['receipt_id', 'integer'],
             ['receipt_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Receipt::class
+                'targetClass' => Receipt::class,
             ],
 
             ['series', 'required'],

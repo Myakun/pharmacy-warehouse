@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use DateTimeImmutable;
 use JetBrains\PhpStorm\ArrayShape;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
@@ -34,10 +33,10 @@ class Product extends ActiveRecord
     public const PERMISSION_MANAGE = 'manageProducts';
 
     #[ArrayShape([
-        'name' => "string",
-        'package_volume' => "string",
-        'producer_id' => "string",
-        'storage_mode_id' => "string"
+        'name' => 'string',
+        'package_volume' => 'string',
+        'producer_id' => 'string',
+        'storage_mode_id' => 'string',
     ])]
     public function attributeLabels(): array
     {
@@ -49,7 +48,7 @@ class Product extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
+    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [
@@ -60,7 +59,7 @@ class Product extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -98,7 +97,7 @@ class Product extends ActiveRecord
             ['producer_id', 'integer'],
             ['producer_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Producer::class
+                'targetClass' => Producer::class,
             ],
             ['producer_id', 'unique', 'targetAttribute' => ['name', 'producer_id']],
 
@@ -106,7 +105,7 @@ class Product extends ActiveRecord
             ['storage_mode_id', 'integer'],
             ['storage_mode_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => StorageMode::class
+                'targetClass' => StorageMode::class,
             ],
         ];
     }

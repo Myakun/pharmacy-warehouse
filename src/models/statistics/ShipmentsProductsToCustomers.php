@@ -27,15 +27,15 @@ class ShipmentsProductsToCustomers extends Model
     public ?string $series = null;
 
     #[ArrayShape([
-        'customerId' => "string",
-        'invoiceDateFrom' => "string",
-        'invoiceNumber' => "string",
-        'productId' => "string",
-        'series' => "string"
+        'customerId' => 'string',
+        'invoiceDateFrom' => 'string',
+        'invoiceNumber' => 'string',
+        'productId' => 'string',
+        'series' => 'string',
     ])]
     public function attributeLabels(): array
     {
-        $labels = (new Shipment())->attributeLabels();
+        $labels = new Shipment()->attributeLabels();
 
         return [
             'customerId' => $labels['customer_id'],
@@ -77,9 +77,9 @@ class ShipmentsProductsToCustomers extends Model
             ->with([
                 'createdBy',
                 'customer',
-                'shipmentProducts' => function(ActiveQuery $query) {
-                    $query->with(['productStorageCell' => function(ActiveQuery $query) {
-                        $query->with(['receiptProduct' => function(ActiveQuery $query) {
+                'shipmentProducts' => function (ActiveQuery $query) {
+                    $query->with(['productStorageCell' => function (ActiveQuery $query) {
+                        $query->with(['receiptProduct' => function (ActiveQuery $query) {
                             $query->with(['product']);
                         }]);
                     }]);
@@ -110,9 +110,9 @@ class ShipmentsProductsToCustomers extends Model
         if (null != $this->productId) {
             $this->filterEnabled = true;
             $query->innerJoinWith([
-                'shipmentProducts' => function(ActiveQuery $query) {
-                    $query->innerJoinWith(['productStorageCell' => function(ActiveQuery $query) {
-                        $query->innerJoinWith(['receiptProduct' => function(ActiveQuery $query) {
+                'shipmentProducts' => function (ActiveQuery $query) {
+                    $query->innerJoinWith(['productStorageCell' => function (ActiveQuery $query) {
+                        $query->innerJoinWith(['receiptProduct' => function (ActiveQuery $query) {
                             $query->andWhere(['product_id' => $this->productId]);
                         }]);
                     }]);
@@ -123,9 +123,9 @@ class ShipmentsProductsToCustomers extends Model
         if (null != $this->series) {
             $this->filterEnabled = true;
             $query->innerJoinWith([
-                'shipmentProducts' => function(ActiveQuery $query) {
-                    $query->innerJoinWith(['productStorageCell' => function(ActiveQuery $query) {
-                        $query->innerJoinWith(['receiptProduct' => function(ActiveQuery $query) {
+                'shipmentProducts' => function (ActiveQuery $query) {
+                    $query->innerJoinWith(['productStorageCell' => function (ActiveQuery $query) {
+                        $query->innerJoinWith(['receiptProduct' => function (ActiveQuery $query) {
                             $query->andWhere(['series' => $this->series]);
                         }]);
                     }]);

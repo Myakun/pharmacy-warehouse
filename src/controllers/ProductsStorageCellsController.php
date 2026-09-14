@@ -64,7 +64,7 @@ class ProductsStorageCellsController extends Controller
 
             $hash = sprintf(
                 '%s-%s',
-                $productStorageCell->receiptProduct->product_id ,
+                $productStorageCell->receiptProduct->product_id,
                 $productStorageCell->receiptProduct->series
             );
 
@@ -111,9 +111,9 @@ class ProductsStorageCellsController extends Controller
                             'expirationDate',
                             'expirationPercentage',
                             'productName',
-                            'productionDate'
+                            'productionDate',
                         ],
-                    ])
+                    ]),
                 ]),
                 'filterModel' => $filterModel,
             ]),

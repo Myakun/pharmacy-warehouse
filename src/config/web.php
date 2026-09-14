@@ -35,11 +35,11 @@ $config = [
     'defaultRoute' => 'default/index',
     'modules' => [
         'gridview' => [
-            'class' => kartik\grid\Module::class
-        ]
+            'class' => kartik\grid\Module::class,
+        ],
     ],
     'params' => [
-        'bsVersion' => '5.x'
+        'bsVersion' => '5.x',
     ],
 ];
 

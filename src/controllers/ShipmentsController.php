@@ -76,8 +76,8 @@ class ShipmentsController extends Controller
                             $query->with(['receiptProduct' => function ($query) {
                                 $query->with('product');
                             }]);
-                    }
-                    ])
+                        },
+                    ]),
             ]),
             'disableDelete' => false,
         ]);

@@ -11,8 +11,8 @@ return ArrayHelper::merge([
               'class' => MigrateController::class,
               'migrationPath' => [
                   '@app/migrations',
-                  '@yii/rbac/migrations'
-              ]
+                  '@yii/rbac/migrations',
+              ],
           ],
     ],
     'controllerNamespace' => 'app\commands',

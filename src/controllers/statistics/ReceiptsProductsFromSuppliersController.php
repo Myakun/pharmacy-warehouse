@@ -6,7 +6,6 @@ namespace app\controllers\statistics;
 
 use app\components\web\Controller;
 use app\models\Receipt;
-use app\models\Shipment;
 use app\models\statistics\ReceiptsProductsFromSuppliers;
 use Yii;
 use yii\data\ArrayDataProvider;
@@ -64,7 +63,7 @@ class ReceiptsProductsFromSuppliersController extends Controller
                         'attributes' => [
                             'invoiceDate',
                         ],
-                    ])
+                    ]),
                 ]),
                 'filterModel' => $filterModel,
             ]),

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace app\models\receipt;
 
-use app\models\Customer;
 use app\models\Receipt;
 use app\models\Supplier;
 use DateTime;
@@ -24,10 +23,10 @@ class Index extends Model
 
     public ?string $supplierId = null;
 
-    #[ArrayShape(['invoiceDateFrom' => "string", 'invoiceNumber' => "string", 'supplierId' => "string"])]
+    #[ArrayShape(['invoiceDateFrom' => 'string', 'invoiceNumber' => 'string', 'supplierId' => 'string'])]
     public function attributeLabels(): array
     {
-        $labels = (new Receipt())->attributeLabels();
+        $labels = new Receipt()->attributeLabels();
 
         return [
             'invoiceDateFrom' => $labels['invoice_date'],

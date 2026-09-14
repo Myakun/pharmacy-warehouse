@@ -30,7 +30,7 @@ class Shipment extends ActiveRecord
 
     public const PERMISSION_MANAGE = 'manageShipments';
 
-    #[ArrayShape(['customer_id' => "string", 'invoice_date' => "string", 'invoice_number' => "string"])]
+    #[ArrayShape(['customer_id' => 'string', 'invoice_date' => 'string', 'invoice_number' => 'string'])]
     public function attributeLabels(): array
     {
         return [
@@ -40,7 +40,7 @@ class Shipment extends ActiveRecord
         ];
     }
 
-    #[ArrayShape(['blameable' => "array", 'timestamp' => "array"])]
+    #[ArrayShape(['blameable' => 'array', 'timestamp' => 'array'])]
     public function behaviors(): array
     {
         return [
@@ -51,7 +51,7 @@ class Shipment extends ActiveRecord
             'timestamp' => [
                 'class' => TimestampBehavior::class,
                 'updatedAtAttribute' => false,
-                'value' => new Expression('NOW()')
+                'value' => new Expression('NOW()'),
             ],
         ];
     }
@@ -60,7 +60,7 @@ class Shipment extends ActiveRecord
     {
         return $this->hasOne(User::class, ['id' => 'created_by']);
     }
-    
+
     public function getCustomer(): ActiveQuery
     {
         return $this->hasOne(Customer::class, ['id' => 'customer_id']);
@@ -78,7 +78,7 @@ class Shipment extends ActiveRecord
             ['customer_id', 'integer'],
             ['customer_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => Customer::class
+                'targetClass' => Customer::class,
             ],
 
             ['invoice_date', 'required'],

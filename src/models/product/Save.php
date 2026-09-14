@@ -7,7 +7,6 @@ namespace app\models\product;
 use app\components\web\crud\Model;
 use app\models\Producer;
 use app\models\Product;
-use app\models\Series;
 use app\models\StorageMode;
 use JetBrains\PhpStorm\ArrayShape;
 use yii\db\ActiveRecord;
@@ -47,14 +46,14 @@ class Save extends Model
     }
 
     #[ArrayShape([
-        'name' => "string",
-        'packageVolume' => "string",
-        'producer' => "string",
-        'storageModeId' => "string"
+        'name' => 'string',
+        'packageVolume' => 'string',
+        'producer' => 'string',
+        'storageModeId' => 'string',
     ])]
     public function attributeLabels(): array
     {
-        $labels = (new Product())->attributeLabels();
+        $labels = new Product()->attributeLabels();
 
         return [
             'name' => $labels['name'],
@@ -126,7 +125,7 @@ class Save extends Model
             ['storageModeId', 'integer'],
             ['storageModeId', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => StorageMode::class
+                'targetClass' => StorageMode::class,
             ],
         ];
     }

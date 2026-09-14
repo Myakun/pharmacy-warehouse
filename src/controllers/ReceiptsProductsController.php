@@ -70,8 +70,8 @@ class ReceiptsProductsController extends Controller
                 'redirect' => [
                     'create' => Url::to(['index', 'receiptId' => $receiptId, 'showForm' => true]),
                     'save' => Url::to(['index', 'receiptId' => $receiptId]),
-                ]
-            ]
+                ],
+            ],
         ]);
 
         if (null != $response) {
@@ -91,7 +91,7 @@ class ReceiptsProductsController extends Controller
 
         $receiptDataProvider = new ArrayDataProvider([
             'allModels' => [$receipt],
-            'key' => 'id'
+            'key' => 'id',
         ]);
 
         return $this->index([

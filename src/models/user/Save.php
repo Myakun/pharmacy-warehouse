@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace app\models\user;
 
-use app\models\User;
 use app\components\web\crud\Model;
+use app\models\User;
 use JetBrains\PhpStorm\ArrayShape;
 use Yii;
-use yii\db\ActiveRecord;
 
 abstract class Save extends Model
 {
@@ -18,10 +17,10 @@ abstract class Save extends Model
 
     public ?string $role = null;
 
-    #[ArrayShape(['email' => "string", 'name' => "string", 'role' => "string"])]
+    #[ArrayShape(['email' => 'string', 'name' => 'string', 'role' => 'string'])]
     public function attributeLabels(): array
     {
-        $labels = (new User())->attributeLabels();
+        $labels = new User()->attributeLabels();
 
         return [
             'email' => 'Email',

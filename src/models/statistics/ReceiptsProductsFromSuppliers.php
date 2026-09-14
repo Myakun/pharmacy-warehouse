@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace app\models\statistics;
 
-use app\models\Customer;
 use app\models\Product;
 use app\models\Receipt;
-use app\models\Shipment;
 use app\models\Supplier;
 use DateTime;
 use JetBrains\PhpStorm\ArrayShape;
@@ -29,15 +27,15 @@ class ReceiptsProductsFromSuppliers extends Model
     public ?string $supplierId = null;
 
     #[ArrayShape([
-        'invoiceDateFrom' => "string",
-        'invoiceNumber' => "string",
-        'productId' => "string",
-        'series' => "string",
-        'supplierId' => "string"
+        'invoiceDateFrom' => 'string',
+        'invoiceNumber' => 'string',
+        'productId' => 'string',
+        'series' => 'string',
+        'supplierId' => 'string',
     ])]
     public function attributeLabels(): array
     {
-        $labels = (new Receipt())->attributeLabels();
+        $labels = new Receipt()->attributeLabels();
 
         return [
             'invoiceDateFrom' => $labels['invoice_date'],
@@ -78,7 +76,7 @@ class ReceiptsProductsFromSuppliers extends Model
         $query = Receipt::find()
             ->with([
                 'createdBy',
-                'receiptProducts' => function(ActiveQuery $query) {
+                'receiptProducts' => function (ActiveQuery $query) {
                     $query->with(['product']);
                 },
                 'supplier',
@@ -103,7 +101,7 @@ class ReceiptsProductsFromSuppliers extends Model
         if (null != $this->productId) {
             $this->filterEnabled = true;
             $query->innerJoinWith([
-                'receiptProducts' => function(ActiveQuery $query) {
+                'receiptProducts' => function (ActiveQuery $query) {
                     $query->andWhere(['product_id' => $this->productId]);
                 },
             ]);
@@ -112,7 +110,7 @@ class ReceiptsProductsFromSuppliers extends Model
         if (null != $this->series) {
             $this->filterEnabled = true;
             $query->innerJoinWith([
-                'receiptProducts' => function(ActiveQuery $query) {
+                'receiptProducts' => function (ActiveQuery $query) {
                     $query->andWhere(['series' => $this->series]);
                 },
             ]);

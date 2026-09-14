@@ -4,13 +4,8 @@ declare(strict_types=1);
 
 namespace app\models;
 
-use DateTimeImmutable;
-use JetBrains\PhpStorm\ArrayShape;
-use yii\behaviors\BlameableBehavior;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-use yii\db\Expression;
 
 /**
  * @property int $amount
@@ -27,7 +22,7 @@ class ProductStorageCell extends ActiveRecord
 {
     public const PERMISSION_LIST = 'listProductStorageCells';
 
-    public function afterDelete():void
+    public function afterDelete(): void
     {
         parent::afterDelete();
 
@@ -73,14 +68,14 @@ class ProductStorageCell extends ActiveRecord
             ['receipt_product_id', 'integer'],
             ['receipt_product_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => ReceiptProduct::class
+                'targetClass' => ReceiptProduct::class,
             ],
 
             ['storage_cell_id', 'required'],
             ['storage_cell_id', 'integer'],
             ['storage_cell_id', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => StorageCell::class
+                'targetClass' => StorageCell::class,
             ],
         ];
     }

@@ -9,7 +9,7 @@ $params = include __DIR__ . '/params.php';
 
 $config = [
     'aliases' => [
-        '@bower' => dirname(__DIR__, 2) . '/vendor/bower-asset'
+        '@bower' => dirname(__DIR__, 2) . '/vendor/bower-asset',
     ],
     'basePath' => dirname(__DIR__),
     'runtimePath' => dirname(__DIR__, 2) . '/var/runtime',
@@ -20,7 +20,7 @@ $config = [
             'class' => yii\rbac\DbManager::class,
         ],
         'cache' => [
-            'class' => FileCache::class
+            'class' => FileCache::class,
         ],
         'db' => [
             'charset' => 'utf8',
@@ -29,7 +29,7 @@ $config = [
             'enableSchemaCache' => !YII_DEBUG,
         ],
         'errorHandler' => [
-            'discardExistingOutput' => !YII_DEBUG
+            'discardExistingOutput' => !YII_DEBUG,
         ],
         'formatter' => [
             'dateFormat' => 'php:d.m.Y',

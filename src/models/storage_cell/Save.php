@@ -48,15 +48,15 @@ class Save extends Model
     }
 
     #[ArrayShape([
-        'rackNumber' => "string",
-        'rowNumber' => "string",
-        'shelfNumber' => "string",
-        'storageModeId' => "string",
-        'volume' => "string"
+        'rackNumber' => 'string',
+        'rowNumber' => 'string',
+        'shelfNumber' => 'string',
+        'storageModeId' => 'string',
+        'volume' => 'string',
     ])]
     public function attributeLabels(): array
     {
-        $labels = (new StorageCell())->attributeLabels();
+        $labels = new StorageCell()->attributeLabels();
 
         return [
             'rackNumber' => $labels['rack_number'],
@@ -127,7 +127,7 @@ class Save extends Model
             ['storageModeId', 'integer'],
             ['storageModeId', 'exist',
                 'targetAttribute' => 'id',
-                'targetClass' => StorageMode::class
+                'targetClass' => StorageMode::class,
             ],
 
             ['volume', 'required'],

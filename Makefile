@@ -7,6 +7,12 @@ docker-rebuild:
 	docker compose build
 	docker compose up -d --remove-orphans
 
+phpcs:
+	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/php-cs-fixer fix --dry-run --diff
+
+phpcs-fix:
+	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/php-cs-fixer fix
+
 phpstan:
 	docker exec -w /var/www/app pharmacy-warehouse-php /usr/local/bin/php vendor/bin/phpstan analyse --memory-limit=1G
 

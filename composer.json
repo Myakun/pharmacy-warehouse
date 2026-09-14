@@ -63,10 +63,13 @@
   "name": "myakun/apotheke",
   "description": "",
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.95",
     "phpstan/phpstan": "^2.2",
     "yii2-extensions/phpstan": "^0.4.1"
   },
   "scripts": {
+    "cs": "php-cs-fixer fix --dry-run --diff",
+    "cs:fix": "php-cs-fixer fix",
     "phpstan": "phpstan analyse --memory-limit=1G"
   }
 }

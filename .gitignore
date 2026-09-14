@@ -11,3 +11,4 @@ docker-compose.override.yml
 /var/
 /phpstan.neon
 /phpstan-baseline.neon
+/.php-cs-fixer.php

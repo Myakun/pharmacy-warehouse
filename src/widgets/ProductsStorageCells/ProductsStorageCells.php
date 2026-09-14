@@ -27,7 +27,7 @@ class ProductsStorageCells extends Widget
         }
 
         $filterModel = new Index();
-        $filterModel->productId = $this->productId;
+        $filterModel->productId = (string) $this->productId;
 
         $allModels = [];
         foreach ($filterModel->getQuery()->all() as $productStorageCell) {

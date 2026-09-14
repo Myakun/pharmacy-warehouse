@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace app\migrations;
+
 use app\models\Shipment;
 use yii\db\Migration;
 

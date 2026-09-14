@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace app\migrations;
+
 use app\models\ReceiptProduct;
 use yii\db\Migration;
 

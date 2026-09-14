@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace app\migrations;
+
 use app\models\Customer;
 use app\models\Producer;
 use app\models\Product;
@@ -12,6 +14,7 @@ use app\models\StorageCell;
 use app\models\StorageMode;
 use app\models\Supplier;
 use app\models\User;
+use Yii;
 use yii\db\Migration;
 
 class m220501_090000_init_rbac extends Migration

@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+namespace app\migrations;
+
 use app\models\User;
+use Yii;
 use yii\db\Migration;
 
 class m220501_093307_users extends Migration

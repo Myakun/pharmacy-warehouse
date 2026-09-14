@@ -1,0 +1,8 @@
+services:
+  mysql:
+    ports:
+      - "31301:3306"
+  php:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile-local

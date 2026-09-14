@@ -34,3 +34,4 @@ composer.lock
 
 .env
 node_modules
+docker-compose.override.yml

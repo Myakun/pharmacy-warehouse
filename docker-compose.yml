@@ -1,22 +1,39 @@
-version: '3'
 services:
+  mysql:
+    container_name: pharmacy-warehouse-mysql
+    image: mysql:8.4
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${APP_MYSQL_ROOT_PASS}
+      MYSQL_DATABASE: ${APP_MYSQL_DB}
+      MYSQL_PASSWORD: ${APP_MYSQL_PASS}
+      MYSQL_USER: ${APP_MYSQL_USER}
+    restart: always
   nginx:
     build: ./docker/nginx
-    container_name: my-apotheke-nginx
-    links:
+    container_name: pharmacy-warehouse-nginx
+    env_file: .env
+    depends_on:
       - php
-    network_mode: bridge
     ports:
       - "${APP_HTTP_PORT}:${APP_HTTP_PORT}"
     volumes:
       - ./docker/nginx/hosts:/etc/nginx/conf.d
       - ./var/log/nginx:/var/log/nginx
-      - ./:${APP_DIR}
+      - ./:/var/www/app
     restart: always
   php:
-    build: ./docker/php
-    container_name: my-apotheke-php
-    network_mode: bridge
+    build:
+      context: ./docker/php
+    env_file: .env
+    container_name: pharmacy-warehouse-php
+    depends_on:
+      - mysql
     volumes:
-      - ./:${APP_DIR}
+      - ./:/var/www/app
     restart: always
+
+volumes:
+  mysql-data:

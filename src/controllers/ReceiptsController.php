@@ -79,8 +79,8 @@ class ReceiptsController extends Controller
 
     public function actionUpdate(int $id): Response
     {
-        $customer = Receipt::findOne($id);
-        if (null == $customer) {
+        $receipt = Receipt::findOne($id);
+        if (null == $receipt) {
             throw new NotFoundHttpException();
         }
 

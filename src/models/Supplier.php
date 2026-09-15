@@ -30,7 +30,7 @@ class Supplier extends ActiveRecord
 
     public const CONTRACT_NUMBER_MIN = 1;
 
-    public const CONTRACT_NUMBER_PREFIX = 'П-';
+    public const CONTRACT_NUMBER_PREFIX = 'S-';
 
     public const NAME_MAX_LENGTH = 150;
 

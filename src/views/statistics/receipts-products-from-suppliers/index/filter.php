@@ -90,7 +90,7 @@ use yii\web\JsExpression;
                 <?= Yii::t('app', 'Apply filter') ?>
             </button>
             <?php if ($model->filterEnabled()) { ?>
-                <a class="btn btn-danger" href="/statistics/shipments-products-to-customers/index"><?= Yii::t('app', 'Reset filter') ?></a>
+                <a class="btn btn-danger" href="/statistics/receipts-products-from-suppliers/index"><?= Yii::t('app', 'Reset filter') ?></a>
             <?php } ?>
         </div>
     </div>

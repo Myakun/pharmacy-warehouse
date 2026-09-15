@@ -6,7 +6,7 @@ use app\widgets\FormSubmit\FormSubmit;
 
 /**
  * @var \yii\data\ActiveDataProvider $dataProvider
- * @var \app\models\producer\Save $model
+ * @var \app\models\product\Save $model
  */
 
 $this->title = sprintf(Yii::t('app', 'Product %s'), $model->name);

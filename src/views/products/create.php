@@ -1,7 +1,7 @@
 <?php
 
 use app\components\widgets\ActiveForm;
-use app\models\producer\Save;
+use app\models\product\Save;
 use app\widgets\FormSubmit\FormSubmit;
 
 /**

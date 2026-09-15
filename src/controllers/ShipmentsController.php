@@ -85,8 +85,8 @@ class ShipmentsController extends Controller
 
     public function actionUpdate(int $id): Response
     {
-        $customer = Shipment::findOne($id);
-        if (null == $customer) {
+        $shipment = Shipment::findOne($id);
+        if (null == $shipment) {
             throw new NotFoundHttpException();
         }
 

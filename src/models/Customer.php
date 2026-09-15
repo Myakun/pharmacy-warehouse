@@ -30,7 +30,7 @@ class Customer extends ActiveRecord
 
     public const CONTRACT_NUMBER_MIN = 1;
 
-    public const CONTRACT_NUMBER_PREFIX = 'К-';
+    public const CONTRACT_NUMBER_PREFIX = 'C-';
 
     public const NAME_MAX_LENGTH = 150;
 

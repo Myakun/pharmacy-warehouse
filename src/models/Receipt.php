@@ -24,7 +24,7 @@ class Receipt extends ActiveRecord
 {
     public const INVOICE_NUMBER_MIN = 1;
 
-    public const INVOICE_NUMBER_PREFIX = 'ПН-';
+    public const INVOICE_NUMBER_PREFIX = 'RN-';
 
     public const PERMISSION_LIST = 'listReceipts';
 

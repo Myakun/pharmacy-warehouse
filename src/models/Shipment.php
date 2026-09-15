@@ -24,7 +24,7 @@ class Shipment extends ActiveRecord
 {
     public const INVOICE_NUMBER_MIN = 1;
 
-    public const INVOICE_NUMBER_PREFIX = 'ОН-';
+    public const INVOICE_NUMBER_PREFIX = 'SN-';
 
     public const PERMISSION_LIST = 'listShipments';
 

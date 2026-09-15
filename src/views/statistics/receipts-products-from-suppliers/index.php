@@ -10,7 +10,7 @@ use yii\helpers\Html;
  * @var \app\models\statistics\ReceiptsProductsFromSuppliers $filterModel
  */
 
-$this->title = 'Поступления товаров';
+$this->title = Yii::t('app', 'Receipts by supplier');
 
 echo GridView::widget([
     'columns' => include(__DIR__ . '/grid/columns.php'),

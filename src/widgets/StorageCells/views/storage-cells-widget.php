@@ -14,16 +14,16 @@ use app\models\Product;
 ?>
 
 <div id="storage-cells-widget">
-    <h5>Ячейки для хранения</h5>
+    <h5><?= Yii::t('app', 'Storage cells') ?></h5>
 
     <div class="alert alert-warning" id="storage-cells-widget-packages-amount">
-        Вы выбрали ячейки для
+        <?= Yii::t('app', 'Selected cells hold') ?>
         <span class="selected" data-amount="0">0</span>
-        из
+        <?= Yii::t('app', 'of') ?>
         <span class="required" data-amount="<?php echo $packagesAmount; ?>">
             <?php echo $packagesAmount; ?>
         </span>
-        упаковок.
+        <?= Yii::t('app', 'packages.') ?>
     </div>
 
     <div class="row" id="storage-cells-widget-storage-cells">
@@ -61,18 +61,18 @@ use app\models\Product;
                                             <b><?php echo $shelfNumber; ?></b>
                                             <span class="storage-cell-volume">
                                                 <?php if ($shelf['anotherPackages']) { ?>
-                                                    фасовка
+                                                    <?= Yii::t('app', 'other package size') ?>
                                                 <?php } elseif ($shelf['anotherSeries']) { ?>
-                                                    серия
+                                                    <?= Yii::t('app', 'other batch') ?>
                                                 <?php } elseif (0 == $shelf['maxPackages']) { ?>
-                                                    нет места
+                                                    <?= Yii::t('app', 'no space') ?>
                                                 <?php } else { ?>
-                                                    до <?php echo $shelf['maxPackages']; ?> уп.
+                                                    <?= Yii::t('app', 'up to {n} pcs', ['n' => $shelf['maxPackages']]) ?>
                                                 <?php } ?>
                                             </span>
                                             <br>
-                                            <button class="btn btn-primary btn-sm select-cell">Выбрать</button>
-                                            <button class="btn btn-danger btn-sm unselect-cell">Убрать</button>
+                                            <button class="btn btn-primary btn-sm select-cell"><?= Yii::t('app', 'Select') ?></button>
+                                            <button class="btn btn-danger btn-sm unselect-cell"><?= Yii::t('app', 'Remove') ?></button>
                                             <input
                                                     name="storage-cells[<?php echo $shelf['id']; ?>]"
                                                     <?php if ($shelf['selected']) { ?>

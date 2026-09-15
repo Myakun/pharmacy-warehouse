@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -27,7 +28,7 @@ class Producer extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'name' => 'Название',
+            'name' => Yii::t('app', 'Name'),
         ];
     }
 

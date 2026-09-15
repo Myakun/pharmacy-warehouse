@@ -19,7 +19,7 @@ return [
     'name' => [
         'attribute' => 'name',
         'format' => 'raw',
-        'label' => 'Поставщик',
+        'label' => Yii::t('app', 'Supplier'),
         'value' => function(Supplier $supplier): string {
             return $this->render('grid/supplier', [
                 'supplier' => $supplier
@@ -29,10 +29,10 @@ return [
     'contract' => [
         'attribute' => 'contractNumber',
         'format' => 'raw',
-        'header' => 'Договор',
+        'header' => Yii::t('app', 'Contract'),
         'value' => function(Supplier $supplier): string {
             return sprintf(
-                '%s от %s',
+                Yii::t('app', '%s dated %s'),
                 Supplier::CONTRACT_NUMBER_PREFIX . $supplier->contract_number,
                 Yii::$app->formatter->asDate($supplier->contract_date)
             );

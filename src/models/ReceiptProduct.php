@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -45,11 +46,11 @@ class ReceiptProduct extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'expiration_date' => 'Срок годности',
-            'packages_amount' => 'Количество упаковок',
-            'product_id' => 'Товар',
-            'production_date' => 'Дата производства',
-            'series' => 'Серия',
+            'expiration_date' => Yii::t('app', 'Expiration date'),
+            'packages_amount' => Yii::t('app', 'Number of packages'),
+            'product_id' => Yii::t('app', 'Product'),
+            'production_date' => Yii::t('app', 'Production date'),
+            'series' => Yii::t('app', 'Batch'),
         ];
     }
 

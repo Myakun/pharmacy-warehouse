@@ -8,6 +8,7 @@ use app\components\web\crud\Model;
 use app\models\Product;
 use app\models\ReceiptProduct;
 use DateTime;
+use Yii;
 
 /**
  * @property ReceiptProduct $entity
@@ -88,12 +89,12 @@ class Save extends Model
     public function storageCellsRule(): void
     {
         if (empty($this->storageCells)) {
-            $this->addError('storageCells', 'Необходимо выбрать ячейки');
+            $this->addError('storageCells', Yii::t('app', 'Select storage cells'));
             return;
         }
 
         if (array_sum($this->storageCells) < $this->packagesAmount) {
-            $this->addError('storageCells', 'Необходимо расположить все упаковки');
+            $this->addError('storageCells', Yii::t('app', 'Place all packages into cells'));
         }
     }
 }

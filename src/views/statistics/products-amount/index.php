@@ -9,7 +9,7 @@ use app\components\widgets\grid\GridView;
  * @var \app\models\statistics\ProductsAmount $filterModel
  */
 
-$this->title = 'Количество отгруженных товаров';
+$this->title = Yii::t('app', 'Shipped quantities');
 
 echo GridView::widget([
     'columns' => include(__DIR__ . '/grid/columns.php'),

@@ -1,14 +1,14 @@
 <?php
 
 use app\components\widgets\ActiveForm;
-use app\models\producer\Save;
+use app\models\product\Save;
 use app\widgets\FormSubmit\FormSubmit;
 
 /**
  * @var Save $model
  */
 
-$this->title = 'Новый товар';
+$this->title = Yii::t('app', 'New product');
 
 ?>
 

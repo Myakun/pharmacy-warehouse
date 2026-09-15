@@ -11,7 +11,7 @@ use app\models\StorageCell;
 <?php echo $storageCell->id; ?>
 <br>
 <small class="text-muted">
-    Создал
+    <?= Yii::t('app', 'Created by') ?>
     <?php echo $storageCell->createdBy->name; ?>
     <?php echo Yii::$app->formatter->asDatetime($storageCell->created_at); ?>
 </small>

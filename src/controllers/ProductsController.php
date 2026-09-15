@@ -47,7 +47,7 @@ class ProductsController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new Product()), [
-            'successMessage' => 'Товар успешно создан',
+            'successMessage' => Yii::t('app', 'Product created'),
         ]);
     }
 
@@ -63,7 +63,7 @@ class ProductsController extends Controller
         }
 
         return $this->delete($product, [
-            'successMessage' => 'Товар успешно удален',
+            'successMessage' => Yii::t('app', 'Product deleted'),
         ]);
     }
 
@@ -91,7 +91,7 @@ class ProductsController extends Controller
         }
 
         return $this->update(new Save(Product::findOne($id)), [
-            'successMessage' => 'Товар успешно изменён',
+            'successMessage' => Yii::t('app', 'Product updated'),
         ]);
     }
 }

@@ -21,7 +21,7 @@ use yii\web\JsExpression;
 ]); ?>
     <div class="card">
         <div class="card-header">
-            Новый товар
+            <?= Yii::t('app', 'New product') ?>
         </div>
         <div class="card-body">
             <?php echo $form->errorSummary([$model, $model->getEntity()]); ?>

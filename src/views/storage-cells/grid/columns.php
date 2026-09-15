@@ -20,7 +20,7 @@ return [
     ],
     'name' => [
         'attribute' => 'name',
-        'label' => 'Ячейка',
+        'label' => Yii::t('app', 'Cell'),
         'value' => function(StorageCell $storageCell): string {
             return $storageCell->getName();
         }

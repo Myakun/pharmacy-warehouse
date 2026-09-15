@@ -11,7 +11,7 @@ use app\components\widgets\grid\GridView;
 use app\models\StorageCell;
 use yii\helpers\Html;
 
-$this->title = 'Ячейки склада';
+$this->title = Yii::t('app', 'Storage cells');
 
 ?>
 
@@ -23,6 +23,6 @@ $this->title = 'Ячейки склада';
         'heading' => $this->title,
     ],
     'toolbar' => Yii::$app->getUser()->can(StorageCell::PERMISSION_MANAGE) ? [
-        'content' => Html::a('Создать', ['create'], ['class' => 'btn btn-success'])
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success'])
     ] : false,
 ]); ?>

@@ -42,7 +42,7 @@ use yii\helpers\Html;
             <header class="mb-4">
                 <?php
                 NavBar::begin([
-                    'brandLabel' => 'Склад',
+                    'brandLabel' => Yii::t('app', 'Warehouse'),
                     'innerContainerOptions' => [
                         'class' => 'container-fluid'
                     ]
@@ -55,20 +55,20 @@ use yii\helpers\Html;
                         [
                             'items' => [
                                 [
-                                    'label' => 'Товары',
+                                    'label' => Yii::t('app', 'Products'),
                                     'url' => ['products/index'],
                                     'visible' => Yii::$app->user->can(Product::PERMISSION_LIST)
                                 ], [
-                                    'label' => 'Производители',
+                                    'label' => Yii::t('app', 'Producers'),
                                     'url' => ['producers/index'],
                                     'visible' => Yii::$app->user->can(Producer::PERMISSION_LIST)
                                 ], [
-                                    'label' => 'Условия хранения',
+                                    'label' => Yii::t('app', 'Storage conditions'),
                                     'url' => ['storage-modes/index'],
                                     'visible' => Yii::$app->user->can(StorageMode::PERMISSION_LIST)
                                 ]
                             ],
-                            'label' => 'Товары',
+                            'label' => Yii::t('app', 'Catalog'),
                             'url' => ['#'],
                             'visible' =>
                                 Yii::$app->user->can(Producer::PERMISSION_LIST)
@@ -77,24 +77,24 @@ use yii\helpers\Html;
                         ], [
                             'items' => [
                                 [
-                                    'label' => 'Приходы',
+                                    'label' => Yii::t('app', 'Receipts'),
                                     'url' => ['receipts/index'],
                                     'visible' => Yii::$app->user->can(Receipt::PERMISSION_LIST)
                                 ], [
-                                    'label' => 'Отгрузки',
+                                    'label' => Yii::t('app', 'Shipments'),
                                     'url' => ['shipments/index'],
                                     'visible' => Yii::$app->user->can(Shipment::PERMISSION_LIST)
                                 ], [
-                                    'label' => 'Остатки',
+                                    'label' => Yii::t('app', 'Stock'),
                                     'url' => ['products-storage-cells/index'],
                                     'visible' => Yii::$app->user->can(ProductStorageCell::PERMISSION_LIST)
                                 ], [
-                                    'label' => 'Ячейки склада',
+                                    'label' => Yii::t('app', 'Storage cells'),
                                     'url' => ['storage-cells/index'],
                                     'visible' => Yii::$app->user->can(StorageCell::PERMISSION_LIST)
                                 ]
                             ],
-                            'label' => 'Склад',
+                            'label' => Yii::t('app', 'Warehouse'),
                             'url' => ['#'],
                             'visible' =>
                                 Yii::$app->user->can(ProductStorageCell::PERMISSION_LIST)
@@ -104,16 +104,16 @@ use yii\helpers\Html;
                         ], [
                             'items' => [
                                 [
-                                    'label' => 'Клиенты',
+                                    'label' => Yii::t('app', 'Customers'),
                                     'url' => ['customers/index'],
                                     'visible' => Yii::$app->user->can(Customer::PERMISSION_LIST)
                                 ], [
-                                    'label' => 'Поставщики',
+                                    'label' => Yii::t('app', 'Suppliers'),
                                     'url' => ['suppliers/index'],
                                     'visible' => Yii::$app->user->can(Supplier::PERMISSION_LIST)
                                 ]
                             ],
-                            'label' => 'Договора',
+                            'label' => Yii::t('app', 'Partners'),
                             'url' => ['#'],
                             'visible' =>
                                 Yii::$app->user->can(Customer::PERMISSION_LIST)
@@ -121,21 +121,21 @@ use yii\helpers\Html;
                         ], [
                             'items' => [
                                 [
-                                    'label' => 'Поступления товаров',
+                                    'label' => Yii::t('app', 'Receipts by supplier'),
                                     'url' => ['statistics/receipts-products-from-suppliers'],
                                 ], [
-                                    'label' => 'Отгрузки клиентам',
+                                    'label' => Yii::t('app', 'Shipments by customer'),
                                     'url' => ['statistics/shipments-products-to-customers'],
                                 ], [
-                                    'label' => 'Количество отгруженных товаров',
+                                    'label' => Yii::t('app', 'Shipped quantities'),
                                     'url' => ['statistics/products-amount'],
                                 ],
                             ],
-                            'label' => 'Отчеты',
+                            'label' => Yii::t('app', 'Reports'),
                             'url' => ['statistics/index'],
                             'visible' => Yii::$app->user->can('statistics')
                         ], [
-                            'label' => 'Пользователи',
+                            'label' => Yii::t('app', 'Users'),
                             'url' => ['users/index'],
                             'visible' => Yii::$app->getUser()->can(User::PERMISSION_MANAGE)
                         ]
@@ -147,7 +147,7 @@ use yii\helpers\Html;
                     'encodeLabels' => false,
                     'items' => [
                         [
-                            'label' => 'Выход',
+                            'label' => Yii::t('app', 'Sign out'),
                             'url' => 'user/logout'
                         ],
                     ]

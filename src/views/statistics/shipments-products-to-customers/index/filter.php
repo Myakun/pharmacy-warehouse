@@ -15,7 +15,7 @@ use yii\web\JsExpression;
 <div class="card">
     <div class="card-header <?php if ($model->filterEnabled()) { ?>bg-primary text-white<?php } ?>">
         <div class="panel-title">
-            Фильтр  <?php if ($model->filterEnabled()) { ?>применен<?php } ?>
+            <?= Yii::t('app', 'Filter') ?> <?php if ($model->filterEnabled()) { ?><?= Yii::t('app', 'applied') ?><?php } ?>
         </div>
     </div>
     <?php $form = ActiveForm::begin(['method'=>'get']); ?>
@@ -86,9 +86,11 @@ use yii\web\JsExpression;
             </div>
         </div>
         <div class="d-flex justify-content-between mt-4">
-            <button class="btn btn-primary" type="submit">Применить фильтр</button>
+            <button class="btn btn-primary" type="submit">
+                <?= Yii::t('app', 'Apply filter') ?>
+            </button>
             <?php if ($model->filterEnabled()) { ?>
-                <a class="btn btn-danger" href="/statistics/shipments-products-to-customers/index">Сбросить фильтр</a>
+                <a class="btn btn-danger" href="/statistics/shipments-products-to-customers/index"><?= Yii::t('app', 'Reset filter') ?></a>
             <?php } ?>
         </div>
     </div>

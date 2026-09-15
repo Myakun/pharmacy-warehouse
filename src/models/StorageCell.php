@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -41,12 +42,12 @@ class StorageCell extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'shelf_number' => 'Полка',
-            'rack_number' => 'Стеллаж',
-            'row_number' => 'Ряд',
-            'storage_mode_id' => 'Условия хранения',
-            'volume' => 'Общий объем (куб. ед.)',
-            'volume_left' => 'Остаток объема (куб. ед.)',
+            'shelf_number' => Yii::t('app', 'Shelf'),
+            'rack_number' => Yii::t('app', 'Rack'),
+            'row_number' => Yii::t('app', 'Row'),
+            'storage_mode_id' => Yii::t('app', 'Storage conditions'),
+            'volume' => Yii::t('app', 'Total volume (cubic units)'),
+            'volume_left' => Yii::t('app', 'Free volume (cubic units)'),
         ];
     }
 
@@ -106,7 +107,7 @@ class StorageCell extends ActiveRecord
             return $this->storageMode->name;
         }
 
-        return 'Ряд ' . $this->row_number;
+        return Yii::t('app', 'Row') . ' ' . $this->row_number;
     }
 
     public function getProductsStorageCells(): ActiveQuery

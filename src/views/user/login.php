@@ -19,7 +19,7 @@ $this->beginPage();
     <base href="<?php echo $scheme . '://' . Yii::$app->getRequest()->getServerName() . Yii::$app->getRequest()->getBaseUrl(); ?>">
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>Аутентификация</title>
+    <title><?= Yii::t('app', 'Sign in') ?></title>
     <?php BootstrapAsset::register($this); ?>
     <?php $this->head(); ?>
 </head>
@@ -43,7 +43,7 @@ $this->beginPage();
                     ->label(false)
                 ?>
                 <div class="d-grid">
-                    <?php echo Html::submitButton('Войти', ['class' => 'btn btn-primary']) ?>
+                    <?php echo Html::submitButton(Yii::t('app', 'Sign in'), ['class' => 'btn btn-primary']) ?>
                 </div>
                 <?php ActiveForm::end(); ?>
             </div>

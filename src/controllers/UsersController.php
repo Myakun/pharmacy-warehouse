@@ -9,6 +9,7 @@ use app\components\web\crud\CRUDTrait;
 use app\models\User;
 use app\models\user\Create;
 use app\models\user\Update;
+use Yii;
 use yii\filters\AccessControl;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
@@ -20,7 +21,7 @@ class UsersController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Create(new User()), [
-            'successMessage' => 'Пользователь успешно создан',
+            'successMessage' => Yii::t('app', 'User created'),
         ]);
     }
 
@@ -32,7 +33,7 @@ class UsersController extends Controller
         }
 
         return $this->delete($user, [
-            'successMessage' => 'Пользователь успешно удален',
+            'successMessage' => Yii::t('app', 'User deleted'),
         ]);
     }
 
@@ -55,7 +56,7 @@ class UsersController extends Controller
         }
 
         return $this->update(new Update(User::findOne($id)), [
-            'successMessage' => 'Пользователь успешно изменён',
+            'successMessage' => Yii::t('app', 'User updated'),
         ]);
     }
 

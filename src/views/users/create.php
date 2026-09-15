@@ -8,7 +8,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var Create $model
  */
 
-$this->title = 'Новый пользователь';
+$this->title = Yii::t('app', 'New user');
 
 ?>
 

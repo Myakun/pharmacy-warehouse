@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -34,10 +35,10 @@ class Product extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'name' => 'Наименование',
-            'package_volume' => 'Объем упаковки (куб. ед.)',
-            'producer_id' => 'Производитель',
-            'storage_mode_id' => 'Условия хранения',
+            'name' => Yii::t('app', 'Name'),
+            'package_volume' => Yii::t('app', 'Package volume (cubic units)'),
+            'producer_id' => Yii::t('app', 'Producer'),
+            'storage_mode_id' => Yii::t('app', 'Storage conditions'),
         ];
     }
 

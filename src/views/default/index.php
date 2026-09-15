@@ -1,3 +1,3 @@
 <?php
 
-$this->title = 'Склад';
+$this->title = Yii::t('app', 'Warehouse');

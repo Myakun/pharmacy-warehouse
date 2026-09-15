@@ -9,7 +9,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var \app\models\customer\Save $model
  */
 
-$this->title = sprintf('Клиент %s', $model->name)
+$this->title = sprintf(Yii::t('app', 'Customer %s'), $model->name)
 
 ?>
 

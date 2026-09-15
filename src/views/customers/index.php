@@ -11,7 +11,7 @@ use yii\helpers\Html;
  * @var \app\models\customer\Index $filterModel
  */
 
-$this->title = 'Клиенты';
+$this->title = Yii::t('app', 'Customers');
 
 ?>
 
@@ -24,6 +24,6 @@ $this->title = 'Клиенты';
         'heading' => $this->title,
     ],
     'toolbar' => Yii::$app->getUser()->can(Customer::PERMISSION_MANAGE) ? [
-        'content' => Html::a('Создать', ['create'], ['class' => 'btn btn-success'])
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success'])
     ] : false,
 ]); ?>

@@ -11,7 +11,7 @@ use yii\helpers\Html;
  * @var \app\models\producer\Index $filterModel
  */
 
-$this->title = 'Производители';
+$this->title = Yii::t('app', 'Producers');
 
 ?>
 
@@ -24,6 +24,6 @@ $this->title = 'Производители';
         'heading' => $this->title,
     ],
     'toolbar' => Yii::$app->getUser()->can(Producer::PERMISSION_MANAGE) ? [
-        'content' => Html::a('Создать', ['create'], ['class' => 'btn btn-success'])
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success'])
     ] : false,
 ]); ?>

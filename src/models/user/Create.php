@@ -20,7 +20,7 @@ class Create extends Save
     public function attributeLabels(): array
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'password' => 'Пароль',
+            'password' => Yii::t('app', 'Password'),
         ]);
     }
 

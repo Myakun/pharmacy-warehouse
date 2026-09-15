@@ -8,7 +8,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var Save $model
  */
 
-$this->title = 'Новый клиент';
+$this->title = Yii::t('app', 'New customer');
 
 ?>
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -29,7 +30,7 @@ class Supplier extends ActiveRecord
 
     public const CONTRACT_NUMBER_MIN = 1;
 
-    public const CONTRACT_NUMBER_PREFIX = 'П-';
+    public const CONTRACT_NUMBER_PREFIX = 'S-';
 
     public const NAME_MAX_LENGTH = 150;
 
@@ -42,12 +43,12 @@ class Supplier extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'address' => 'Адрес',
-            'contact_person' => 'Контактное лицо',
-            'contract_date' => 'Дата договора',
-            'contract_number' => 'Номер договора',
-            'name' => 'Поставщик',
-            'phone' => 'Телефон',
+            'address' => Yii::t('app', 'Address'),
+            'contact_person' => Yii::t('app', 'Contact person'),
+            'contract_date' => Yii::t('app', 'Contract date'),
+            'contract_number' => Yii::t('app', 'Contract number'),
+            'name' => Yii::t('app', 'Supplier'),
+            'phone' => Yii::t('app', 'Phone'),
         ];
     }
 

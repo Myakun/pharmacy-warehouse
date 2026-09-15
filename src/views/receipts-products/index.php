@@ -14,7 +14,7 @@ use kartik\helpers\Html;
  */
 
 $this->title = sprintf(
-    'Товары прихода %s от %s',
+    Yii::t('app', 'Products of receipt %s dated %s'),
     Receipt::INVOICE_NUMBER_PREFIX . $receipt->invoice_number,
     $receipt->invoice_date
 );
@@ -37,7 +37,7 @@ echo GridView::widget([
         'heading' => $this->title,
     ],
     'toolbar' => [
-        'content' => Html::a('Создать', ['create'], [
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], [
             'class' => 'btn btn-success',
             'id' => 'add-product',
         ])

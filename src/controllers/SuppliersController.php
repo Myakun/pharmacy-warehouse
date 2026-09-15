@@ -47,7 +47,7 @@ class SuppliersController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new Supplier()), [
-            'successMessage' => 'Поставщик успешно создан',
+            'successMessage' => Yii::t('app', 'Supplier created'),
         ]);
     }
 
@@ -63,7 +63,7 @@ class SuppliersController extends Controller
         }
 
         return $this->delete($supplier, [
-            'successMessage' => 'Поставщик успешно удален',
+            'successMessage' => Yii::t('app', 'Supplier deleted'),
         ]);
     }
 
@@ -91,7 +91,7 @@ class SuppliersController extends Controller
         }
 
         return $this->update(new Save(Supplier::findOne($id)), [
-            'successMessage' => 'Поставщик успешно изменён',
+            'successMessage' => Yii::t('app', 'Supplier updated'),
         ]);
     }
 }

@@ -15,17 +15,17 @@ echo GridView::widget([
     'columns' => [
         'storageCell' => [
             'attribute' => 'storageCell',
-            'header' => 'Ячейка',
+            'header' => Yii::t('app', 'Cell'),
         ],
         'series' => [
             'attribute' => 'series',
-            'header' => 'Серия',
+            'header' => Yii::t('app', 'Batch'),
         ],
 
         'amount' => [
             'attribute' => 'amount',
             'format' => 'raw',
-            'label' => 'Количество',
+            'label' => Yii::t('app', 'Quantity'),
             'value' => function (array $model) {
                 $options = [];
                 for ($i = 0; $i <= $model['amount']; $i++) {
@@ -33,22 +33,22 @@ echo GridView::widget([
                 }
 
                 $html = Html::dropDownList('amounts[' . $model['productStorageCellId'] . ']', 0, $options);
-                $html .= '&nbsp; из ' . $model['amount'];
+                $html .= '&nbsp; ' . Yii::t('app', 'of') . ' ' . $model['amount'];
 
                 return $html;
             },
         ],
         'productionDate' => [
             'attribute' => 'productionDate',
-            'label' => 'Дата производства',
+            'label' => Yii::t('app', 'Production date'),
         ],
         'expirationDate' => [
             'attribute' => 'expirationDate',
-            'label' => 'Срок годности',
+            'label' => Yii::t('app', 'Expiration date'),
         ],
         'expirationPercentage' => [
             'attribute' => 'expirationPercentage',
-            'label' => 'Процент срока годности',
+            'label' => Yii::t('app', 'Shelf life left (%)'),
             'value' => function (array $model) {
                 return $model['expirationPercentage'] . '%';
             },

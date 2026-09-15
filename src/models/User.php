@@ -44,7 +44,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function attributeLabels(): array
     {
         return [
-            'name' => 'Имя',
+            'name' => Yii::t('app', 'Name'),
         ];
     }
 

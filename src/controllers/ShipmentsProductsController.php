@@ -61,7 +61,7 @@ class ShipmentsProductsController extends Controller
 
         return $this->delete($shipmentProduct, [
             'returnUrl' => Url::to(['index', 'shipmentId' => $shipmentProduct->shipment_id]),
-            'successMessage' => 'Товар успешно удален из отгрузки',
+            'successMessage' => Yii::t('app', 'Product removed from the shipment'),
         ]);
     }
 

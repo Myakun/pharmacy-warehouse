@@ -33,11 +33,23 @@ $config = [
         ],
         'formatter' => [
             'dateFormat' => 'php:d.m.Y',
+            'datetimeFormat' => 'php:d.m.Y H:i',
+            'timeFormat' => 'php:H:i',
+        ],
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => yii\i18n\PhpMessageSource::class,
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en',
+                ],
+            ],
         ],
     ],
     'id' => 'warehouse',
-    'language' => 'ru',
-    'timeZone' => 'Europe/Moscow',
+    'language' => 'en',
+    'sourceLanguage' => 'en',
+    'timeZone' => 'Europe/Berlin',
 ];
 
 $config['components']['db'] = ArrayHelper::merge($config['components']['db'], [

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -27,7 +28,7 @@ class StorageMode extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'name' => 'Условия хранения',
+            'name' => Yii::t('app', 'Storage conditions'),
         ];
     }
 

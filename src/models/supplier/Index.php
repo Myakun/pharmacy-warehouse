@@ -21,7 +21,7 @@ class Index extends Model
 
         if (null != $this->contractNumber) {
             $query
-                ->andWhere(['like', 'contract_number', str_replace(Supplier::CONTRACT_NUMBER_PREFIX, '', $this->contract)]);
+                ->andWhere(['like', 'contract_number', str_replace(Supplier::CONTRACT_NUMBER_PREFIX, '', $this->contractNumber)]);
         }
 
         if (null != $this->name) {

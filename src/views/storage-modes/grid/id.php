@@ -11,7 +11,7 @@ use app\models\StorageMode;
 <?php echo $storageMode->id; ?>
 <br>
 <small class="text-muted">
-    Создал
+    <?= Yii::t('app', 'Created by') ?>
     <?php echo $storageMode->createdBy->name; ?>
     <?php echo Yii::$app->formatter->asDatetime($storageMode->created_at); ?>
 </small>

@@ -11,7 +11,7 @@ use app\components\widgets\grid\GridView;
 use app\models\Product;
 use yii\helpers\Html;
 
-$this->title = 'Товары';
+$this->title = Yii::t('app', 'Products');
 
 ?>
 
@@ -26,6 +26,6 @@ $this->title = 'Товары';
         'heading' => $this->title,
     ],
     'toolbar' => Yii::$app->getUser()->can(Product::PERMISSION_MANAGE) ? [
-        'content' => Html::a('Создать', ['create'], ['class' => 'btn btn-success'])
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success'])
     ] : false,
 ]); ?>

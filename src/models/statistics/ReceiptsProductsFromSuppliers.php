@@ -8,6 +8,7 @@ use app\models\Product;
 use app\models\Receipt;
 use app\models\Supplier;
 use DateTime;
+use Yii;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -32,9 +33,9 @@ class ReceiptsProductsFromSuppliers extends Model
         return [
             'invoiceDateFrom' => $labels['invoice_date'],
             'invoiceNumber' => $labels['invoice_number'],
-            'productId' => 'Товар',
-            'series' => 'Серия',
-            'supplierId' => 'Поставщик',
+            'productId' => Yii::t('app', 'Product'),
+            'series' => Yii::t('app', 'Batch'),
+            'supplierId' => Yii::t('app', 'Supplier'),
         ];
     }
 

@@ -6,6 +6,7 @@ namespace app\models\product_storage_cell;
 
 use app\models\Product;
 use app\models\ProductStorageCell;
+use Yii;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -20,8 +21,8 @@ class Index extends Model
     public function attributeLabels(): array
     {
         return [
-            'productId' => 'Товар',
-            'series' => 'Серия',
+            'productId' => Yii::t('app', 'Product'),
+            'series' => Yii::t('app', 'Batch'),
         ];
     }
 

@@ -8,6 +8,7 @@ use app\models\Customer;
 use app\models\Product;
 use app\models\Shipment;
 use DateTime;
+use Yii;
 use yii\base\Model;
 use yii\db\ActiveQuery;
 
@@ -33,8 +34,8 @@ class ShipmentsProductsToCustomers extends Model
             'customerId' => $labels['customer_id'],
             'invoiceDateFrom' => $labels['invoice_date'],
             'invoiceNumber' => $labels['invoice_number'],
-            'productId' => 'Товар',
-            'series' => 'Серия',
+            'productId' => Yii::t('app', 'Product'),
+            'series' => Yii::t('app', 'Batch'),
         ];
     }
 

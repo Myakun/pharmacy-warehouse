@@ -21,7 +21,7 @@ class Login extends Model
     {
         return [
             'email' => 'Email',
-            'password' => 'Пароль',
+            'password' => Yii::t('app', 'Password'),
         ];
     }
 
@@ -36,7 +36,7 @@ class Login extends Model
         ]);
 
         if (null == $user || !Yii::$app->getSecurity()->validatePassword($this->password, $user->password)) {
-            $this->addError('password', 'Неправильные данные для входа');
+            $this->addError('password', Yii::t('app', 'Incorrect email or password'));
         }
     }
 

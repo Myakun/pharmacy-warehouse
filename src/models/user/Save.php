@@ -23,7 +23,7 @@ abstract class Save extends Model
         return [
             'email' => 'Email',
             'name' => $labels['name'],
-            'role' => 'Должность',
+            'role' => Yii::t('app', 'Role'),
         ];
     }
 

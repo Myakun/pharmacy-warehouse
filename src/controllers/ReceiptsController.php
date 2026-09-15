@@ -23,7 +23,7 @@ class ReceiptsController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new Receipt()), [
-            'successMessage' => 'Приход успешно создан',
+            'successMessage' => Yii::t('app', 'Receipt created'),
         ]);
     }
 
@@ -39,7 +39,7 @@ class ReceiptsController extends Controller
         }
 
         return $this->delete($receipt, [
-            'successMessage' => 'Приход успешно удален',
+            'successMessage' => Yii::t('app', 'Receipt deleted'),
         ]);
     }
 
@@ -85,7 +85,7 @@ class ReceiptsController extends Controller
         }
 
         return $this->update(new Save(Receipt::findOne($id)), [
-            'successMessage' => 'Приход успешно изменён',
+            'successMessage' => Yii::t('app', 'Receipt updated'),
         ]);
     }
 }

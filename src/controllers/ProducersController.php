@@ -47,7 +47,7 @@ class ProducersController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new Producer()), [
-            'successMessage' => 'Производитель успешно создан',
+            'successMessage' => Yii::t('app', 'Producer created'),
         ]);
     }
 
@@ -63,7 +63,7 @@ class ProducersController extends Controller
         }
 
         return $this->delete($producer, [
-            'successMessage' => 'Производитель успешно удален',
+            'successMessage' => Yii::t('app', 'Producer deleted'),
         ]);
     }
 
@@ -91,7 +91,7 @@ class ProducersController extends Controller
         }
 
         return $this->update(new Save(Producer::findOne($id)), [
-            'successMessage' => 'Производитель успешно изменён',
+            'successMessage' => Yii::t('app', 'Producer updated'),
         ]);
     }
 }

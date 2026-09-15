@@ -37,7 +37,7 @@ class ReceiptsProductsController extends Controller
 
         return $this->delete($receiptProduct, [
             'returnUrl' => Url::to(['index', 'receiptId' => $receiptProduct->receipt_id]),
-            'successMessage' => 'Товар успешно удален из прихода',
+            'successMessage' => Yii::t('app', 'Product removed from the receipt'),
         ]);
     }
 
@@ -84,7 +84,7 @@ class ReceiptsProductsController extends Controller
                 $receiptProductStorageCell->save();
             }
 
-            Yii::$app->getSession()->setFlash('successMessage', 'Товар успешно добавлен в приход');
+            Yii::$app->getSession()->setFlash('successMessage', Yii::t('app', 'Product added to the receipt'));
 
             return $response;
         }

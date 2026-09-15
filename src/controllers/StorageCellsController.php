@@ -23,7 +23,7 @@ class StorageCellsController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new StorageCell()), [
-            'successMessage' => 'Ячейка скалада успешно создана',
+            'successMessage' => Yii::t('app', 'Storage cell created'),
         ]);
     }
 
@@ -39,7 +39,7 @@ class StorageCellsController extends Controller
         }
 
         return $this->delete($storageCell, [
-            'successMessage' => 'Ячейка скалада успешно удалена',
+            'successMessage' => Yii::t('app', 'Storage cell deleted'),
         ]);
     }
 
@@ -81,7 +81,7 @@ class StorageCellsController extends Controller
         }
 
         return $this->update(new Save(StorageCell::findOne($id)), [
-            'successMessage' => 'Ячейка скалада успешно изменена',
+            'successMessage' => Yii::t('app', 'Storage cell updated'),
         ]);
     }
 }

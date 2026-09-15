@@ -21,7 +21,7 @@ class StorageModesController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new StorageMode()), [
-            'successMessage' => 'Условие хранения успешно создано',
+            'successMessage' => Yii::t('app', 'Storage condition created'),
         ]);
     }
 
@@ -37,7 +37,7 @@ class StorageModesController extends Controller
         }
 
         return $this->delete($storageMode, [
-            'successMessage' => 'Условие хранения успешно удалено',
+            'successMessage' => Yii::t('app', 'Storage condition deleted'),
         ]);
     }
 
@@ -65,7 +65,7 @@ class StorageModesController extends Controller
         }
 
         return $this->update(new Save(StorageMode::findOne($id)), [
-            'successMessage' => 'Условие хранения успешно изменено',
+            'successMessage' => Yii::t('app', 'Storage condition updated'),
         ]);
     }
 }

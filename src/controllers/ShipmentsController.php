@@ -23,7 +23,7 @@ class ShipmentsController extends Controller
     public function actionCreate(): Response
     {
         return $this->create(new Save(new Shipment()), [
-            'successMessage' => 'Отгрузка успешно создана',
+            'successMessage' => Yii::t('app', 'Shipment created'),
         ]);
     }
 
@@ -39,7 +39,7 @@ class ShipmentsController extends Controller
         }
 
         return $this->delete($shipment, [
-            'successMessage' => 'Отгрузка успешно удалена',
+            'successMessage' => Yii::t('app', 'Shipment deleted'),
         ]);
     }
 
@@ -91,7 +91,7 @@ class ShipmentsController extends Controller
         }
 
         return $this->update(new Save(Shipment::findOne($id)), [
-            'successMessage' => 'Отгрузка успешно изменена',
+            'successMessage' => Yii::t('app', 'Shipment updated'),
         ]);
     }
 }

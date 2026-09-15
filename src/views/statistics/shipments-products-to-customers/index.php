@@ -10,7 +10,7 @@ use yii\helpers\Html;
  * @var \app\models\statistics\ShipmentsProductsToCustomers $filterModel
  */
 
-$this->title = 'Отгрузки клиентам';
+$this->title = Yii::t('app', 'Shipments by customer');
 
 echo GridView::widget([
     'columns' => include(__DIR__ . '/grid/columns.php'),

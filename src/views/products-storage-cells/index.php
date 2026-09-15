@@ -10,7 +10,7 @@ use yii\helpers\Html;
  * @var \app\models\product_storage_cell\Index $filterModel
  */
 
-$this->title = 'Остатки';
+$this->title = Yii::t('app', 'Stock');
 
 echo GridView::widget([
     'columns' => include(__DIR__ . '/grid/columns.php'),

@@ -9,7 +9,7 @@ use app\components\widgets\grid\GridView;
 use app\components\widgets\ActiveForm;
 use app\widgets\FormSubmit\FormSubmit;
 
-$this->title = sprintf('Пользователь %s', $model->name)
+$this->title = sprintf(Yii::t('app', 'User %s'), $model->name)
 
 ?>
 

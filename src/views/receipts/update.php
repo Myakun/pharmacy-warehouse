@@ -10,7 +10,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var \app\models\receipt\Save $model
  */
 
-$this->title = sprintf('Приход %s от %s', Receipt::INVOICE_NUMBER_PREFIX . $model->invoiceNumber, $model->invoiceDate);
+$this->title = sprintf(Yii::t('app', 'Receipt %s dated %s'), Receipt::INVOICE_NUMBER_PREFIX . $model->invoiceNumber, $model->invoiceDate);
 
 GridView::widget([
     'columns' => include(__DIR__ . '/grid/columns.php'),

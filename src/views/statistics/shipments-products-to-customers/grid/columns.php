@@ -10,36 +10,36 @@ return [
 
     'productName' => [
         'attribute' => 'productName',
-        'header' => 'Товар',
+        'header' => Yii::t('app', 'Product'),
     ],
     'amount' => [
         'attribute' => 'amount',
-        'label' => 'Количество',
+        'label' => Yii::t('app', 'Quantity'),
     ],
     'customer' => [
         'attribute' => 'customer',
-        'header' => 'Клиент',
+        'header' => Yii::t('app', 'Customer'),
         'group' => true,
     ],
     'invoiceNumber' => [
         'attribute' => 'invoiceNumber',
-        'header' => 'Номер накладной',
+        'header' => Yii::t('app', 'Invoice number'),
         'group' => true,
     ],
     'invoiceDate' => [
         'attribute' => 'invoiceDate',
-        'label' => 'Дата накладной',
+        'label' => Yii::t('app', 'Invoice date'),
     ],
     'series' => [
         'attribute' => 'series',
-        'header' => 'Серия',
+        'header' => Yii::t('app', 'Batch'),
     ],
     'productionDate' => [
         'attribute' => 'productionDate',
-        'label' => 'Дата производства',
+        'label' => Yii::t('app', 'Production date'),
     ],
     'expirationDate' => [
         'attribute' => 'expirationDate',
-        'label' => 'Срок годности',
+        'label' => Yii::t('app', 'Expiration date'),
     ],
 ];

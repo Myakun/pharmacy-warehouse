@@ -9,7 +9,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var \app\models\storage_mode\Save $model
  */
 
-$this->title = sprintf('Условие хранения %s', $model->name)
+$this->title = sprintf(Yii::t('app', 'Storage condition %s'), $model->name)
 
 ?>
 

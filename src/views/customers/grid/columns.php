@@ -19,7 +19,7 @@ return [
     'name' => [
         'attribute' => 'name',
         'format' => 'raw',
-        'label' => 'Клиент',
+        'label' => Yii::t('app', 'Customer'),
         'value' => function(Customer $customer): string {
             return $this->render('grid/customer', [
                 'customer' => $customer
@@ -29,10 +29,10 @@ return [
     'contract' => [
         'attribute' => 'contractNumber',
         'format' => 'raw',
-        'header' => 'Договор',
+        'header' => Yii::t('app', 'Contract'),
         'value' => function(Customer $customer): string {
             return sprintf(
-                '%s от %s',
+                Yii::t('app', '%s dated %s'),
                 Customer::CONTRACT_NUMBER_PREFIX . $customer->contract_number,
                 Yii::$app->formatter->asDate($customer->contract_date)
             );

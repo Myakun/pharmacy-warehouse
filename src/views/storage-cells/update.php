@@ -9,7 +9,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var \app\models\storage_cell\Save $model
  */
 
-$this->title = sprintf('Ячейка склада %s', $model->getEntity()->getName());
+$this->title = sprintf(Yii::t('app', 'Storage cell %s'), $model->getEntity()->getName());
 
 ?>
 

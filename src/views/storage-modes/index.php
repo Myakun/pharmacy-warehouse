@@ -11,7 +11,7 @@ use app\components\widgets\grid\GridView;
 use app\models\StorageMode;
 use yii\helpers\Html;
 
-$this->title = 'Условия хранения';
+$this->title = Yii::t('app', 'Storage conditions');
 
 ?>
 
@@ -24,6 +24,6 @@ $this->title = 'Условия хранения';
         'heading' => $this->title,
     ],
     'toolbar' => Yii::$app->getUser()->can(StorageMode::PERMISSION_MANAGE) ? [
-        'content' => Html::a('Создать', ['create'], ['class' => 'btn btn-success'])
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success'])
     ] : false,
 ]); ?>

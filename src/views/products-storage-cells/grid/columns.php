@@ -9,39 +9,39 @@ use yii\helpers\Html;
 return [
     'productName' => [
         'attribute' => 'productName',
-        'label' => 'Товар',
+        'label' => Yii::t('app', 'Product'),
     ],
     'series' => [
         'attribute' => 'series',
-        'header' => 'Серия',
+        'header' => Yii::t('app', 'Batch'),
     ],
     'amount' => [
         'attribute' => 'amount',
-        'label' => 'Количество',
+        'label' => Yii::t('app', 'Quantity'),
     ],
     'productionDate' => [
         'attribute' => 'productionDate',
-        'label' => 'Дата производства',
+        'label' => Yii::t('app', 'Production date'),
     ],
     'expirationDate' => [
         'attribute' => 'expirationDate',
-        'label' => 'Срок годности',
+        'label' => Yii::t('app', 'Expiration date'),
     ],
     'expirationPercentage' => [
         'attribute' => 'expirationPercentage',
-        'label' => 'Процент срока годности',
+        'label' => Yii::t('app', 'Shelf life left (%)'),
         'value' => function (array $model) {
             return $model['expirationPercentage'] . '%';
         },
     ],
     'storageCells' => [
         'format' => 'raw',
-        'header' => 'Ячейки',
+        'header' => Yii::t('app', 'Cells'),
         'value' => function (array $model) {
             $html = '';
 
             foreach ($model['storageCells'] as $storageCellName => $amount) {
-                $html .= $storageCellName . ': ' . $amount . ' шт. <br>';
+                $html .= $storageCellName . ': ' . $amount . ' ' . Yii::t('app', 'pcs') . '<br>';
             }
 
             return $html;

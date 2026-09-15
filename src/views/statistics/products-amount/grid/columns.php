@@ -10,15 +10,15 @@ return [
 
     'productName' => [
         'attribute' => 'productName',
-        'header' => 'Товар',
+        'header' => Yii::t('app', 'Product'),
     ],
     'amount' => [
         'attribute' => 'amount',
-        'label' => 'Количество',
+        'label' => Yii::t('app', 'Quantity'),
     ],
     'month' => [
         'attribute' => 'month',
         'group' => true,
-        'label' => 'Месяц',
+        'label' => Yii::t('app', 'Month'),
     ],
 ];

@@ -22,7 +22,7 @@ return [
     'products_count' => [
         'attribute' => 'products_count',
         'format' => 'raw',
-        'header' => 'Кол-во товаров',
+        'header' => Yii::t('app', 'Products'),
         'value' => function(Producer $producer) {
             if (empty($producer->products)) {
                 return 0;

@@ -22,7 +22,7 @@ return [
     'name',
     'role' => [
         'format' => 'raw',
-        'header' => 'Должность',
+        'header' => Yii::t('app', 'Role'),
         'value' => function (User $user) {
             $result = '';
 

@@ -23,7 +23,7 @@ $columns = [
     ],
     'product_id' => [
         'format' => 'raw',
-        'header' => 'Товар',
+        'header' => Yii::t('app', 'Product'),
         'value' => function(ShipmentProduct $shipmentProduct) {
             return $shipmentProduct->productStorageCell->receiptProduct->product->name;
         }
@@ -51,7 +51,7 @@ $columns = [
         'enableSorting' => false,
     ],
     'storage_cell' => [
-        'header' => 'Ячейка склада',
+        'header' => Yii::t('app', 'Storage cell'),
         'value' => function (ShipmentProduct $shipmentProduct) {
             return $shipmentProduct->productStorageCell->storageCell->getName();
         },

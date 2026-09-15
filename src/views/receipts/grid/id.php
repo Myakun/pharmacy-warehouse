@@ -11,7 +11,7 @@ use app\models\Receipt;
 <?php echo $receipt->id; ?>
 <br>
 <small class="text-muted">
-    Создал
+    <?= Yii::t('app', 'Created by') ?>
     <?php echo $receipt->createdBy->name; ?>
     <?php echo Yii::$app->formatter->asDatetime($receipt->created_at); ?>
 </small>

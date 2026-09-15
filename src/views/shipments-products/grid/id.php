@@ -14,7 +14,7 @@ use kartik\helpers\Html;
 <?php echo $shipmentProduct->id; ?>
 <br>
 <small class="text-muted">
-    Создал
+    <?= Yii::t('app', 'Created by') ?>
     <?php echo $shipmentProduct->createdBy->name; ?>
     <?php echo Yii::$app->formatter->asDatetime($shipmentProduct->created_at); ?>
 </small>

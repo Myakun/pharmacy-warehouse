@@ -8,7 +8,7 @@ use app\widgets\FormSubmit\FormSubmit;
  * @var Save $model
  */
 
-$this->title = 'Новое условие хранения';
+$this->title = Yii::t('app', 'New storage condition');
 
 ?>
 

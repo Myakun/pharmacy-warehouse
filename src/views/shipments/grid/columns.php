@@ -63,7 +63,7 @@ return [
     [
         'buttons' => [
             'products' => function ($url, $model, $key): string {
-                return Html::a('Товары', "/shipments-products/index?shipmentId=$key", [
+                return Html::a(Yii::t('app', 'Products'), "/shipments-products/index?shipmentId=$key", [
                     'class' => 'btn btn-light btn-sm mb-3 mt-3',
                 ]);
             }

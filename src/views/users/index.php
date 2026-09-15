@@ -9,7 +9,7 @@ declare(strict_types=1);
 use app\components\widgets\grid\GridView;
 use yii\helpers\Html;
 
-$this->title = 'Пользователи';
+$this->title = Yii::t('app', 'Users');
 
 ?>
 
@@ -22,6 +22,6 @@ $this->title = 'Пользователи';
     ],
     'summary' => false,
     'toolbar' => [
-        'content' => Html::a('Создать', ['create'], ['class' => 'btn btn-success'])
+        'content' => Html::a(Yii::t('app', 'Create'), ['create'], ['class' => 'btn btn-success'])
     ]
 ]); ?>

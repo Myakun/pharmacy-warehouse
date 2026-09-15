@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\models;
 
+use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
@@ -32,9 +33,9 @@ class Receipt extends ActiveRecord
     public function attributeLabels(): array
     {
         return [
-            'invoice_date' => 'Дата накладной',
-            'invoice_number' => 'Номер накладной',
-            'supplier_id' => 'Поставщик',
+            'invoice_date' => Yii::t('app', 'Invoice date'),
+            'invoice_number' => Yii::t('app', 'Invoice number'),
+            'supplier_id' => Yii::t('app', 'Supplier'),
         ];
     }
 

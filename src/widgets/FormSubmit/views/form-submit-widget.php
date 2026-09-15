@@ -14,7 +14,7 @@
     <?php if ($buttonSave) { ?>
         <div>
             <button class="btn btn-success save" name="save"  type="submit" value="save">
-                Сохранить
+                <?= Yii::t('app', 'Save') ?>
             </button>
         </div>
     <?php } ?>
@@ -22,7 +22,7 @@
     <div>
         <?php if ($buttonSaveAndEdit) { ?>
             <button class="btn btn-primary save-and-edit" name="save-and-edit" type="submit" value="save-and-edit">
-                <span class="fas fa-pencil"></span> Сохранить и редактировать
+                <span class="fas fa-pencil"></span> <?= Yii::t('app', 'Save and edit') ?>
             </button>
         <?php } ?>
         <?php if ($buttonSaveAndAdd) { ?>
@@ -30,14 +30,14 @@
                 &nbsp;&nbsp;
             <?php } ?>
             <button class="btn btn-primary save-and-add" name="save-and-add" type="submit" value="save-and-add">
-                <span class="fas fa-plus"></span> Сохранить и добавить еще
+                <span class="fas fa-plus"></span> <?= Yii::t('app', 'Save and add another') ?>
             </button>
         <?php } ?>
     </div>
     <?php } ?>
     <?php if ($buttonCancel) { ?>
         <div>
-            <a href="<?php echo $buttonCancelUrl; ?>" class="btn btn-danger cancel">Отмена</a>
+            <a href="<?php echo $buttonCancelUrl; ?>" class="btn btn-danger cancel"><?= Yii::t('app', 'Cancel') ?></a>
         </div>
     <?php } ?>
 </div>
